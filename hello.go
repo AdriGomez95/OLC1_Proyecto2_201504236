@@ -15,7 +15,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css/")))) //	registers a 'handler' that is responsible of a route/path
 	//http.Handle("/fonts/", http.StripPrefix("/fonts/", http.FileServer(http.Dir("fonts/")))) //	'handler' responds to an HTTP request
-	//**http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("js/"))))
+	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("js/"))))
 	//	basically this is what they do
 	http.HandleFunc("/", index) //	registers a handler function (index) for the pattern ("/")
 

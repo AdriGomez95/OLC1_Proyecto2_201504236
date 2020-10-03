@@ -4,59 +4,109 @@
 <head>
 	<meta charset="utf-8">
 	<title>Compiladores 1</title>
-	
-        <base href="/">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    	
-
-    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="../css/styles.css" rel="stylesheet" type="text/css">
+	<base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <ul class="menu">
-   <li><a href="#">Abrir archivo</a></li>
-   <li><a href="#">Nuevo</a></li>
-   <li><a href="#">Guardar</a></li>
-   <li><a href="#">Guardar como</a></li>
+	<header class="menu">
+        <ul class="nav nav-pills">
+            <div class="texto">Adriana Gómez - 201504236</div>
+            <li class="nav-item dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Menu</button>
+                <div class="dropdown-menu">
+                    <label class="dropdown-toggle custom-file-upload">
+                        <!--Input para abrir archivo.-->
+                        Cargar archivo
+                        <input id="fileInput" type="file" size="20" onchange='processFiles(this.files)' accept=".rmt">
+                    </label>
+                    <div class="dropdown-divider"></div>
+                    <a onclick="saveJava()" class="dropdown-item" href="#">Guardar archivo</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Nueva Pestaña</a>
+                </div>
+            </li>
+            <div class="texto"></div>
+            <li class="nav-item dropdown">
+                <!--button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Reportes</button>
+                <div class="dropdown-menu">
+                    <a onclick="htmlReport()" class="dropdown-item" href="#">Errores</a>
+				</div-->
+				<button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Descargar</button>
+                <div class="dropdown-menu">
+                    <a onclick="htmlReport()" class="dropdown-item" href="#">Ambos</a>
+                    <a onclick="htmlReport()" class="dropdown-item" href="#">JavaScript</a>
+                    <a onclick="htmlReport()" class="dropdown-item" href="#">Python</a>
+                </div>
+            </li>
+            <div class="texto"></div>
+            <li class="nav-item">
+                <button onclick="Conn()" class="btn btn-outline-light" aria-haspopup="true"
+                    aria-expanded="false">Analizar</button>
+            </li>
+        </ul>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col"><br><br><br><br>
+                        <h3 class="title">Entrada</h3>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="t1" data-toggle="tab" href="#tab1" role="tab"
+                                    aria-controls="tab1" aria-selected="true">Pestaña</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+							<!-- Aqui va el text de entrada donde se carga el archivo -->
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="t1">
+                                <textarea id="javaText" class="form-control" rows="18"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+                    <div class="col">
+                    </div>
+                </div>
+			</div>
+			
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <br><br>
+						<!-- Aqui van los text de salida -->
+                        <h3 class="title">Salida JS</h3>
+						<textarea id="txtjs" readonly class="form-control" rows="18"></textarea>
+						<br><br>
+                        <h3 class="title">Salida Python</h3>
+                        <textarea id="txtpython" readonly class="form-control" rows="18"></textarea>
 
-   <li class="item-py"><a href="#">Python</a></li>
-   <li class="item-py"><a href="#">JavaScript</a></li>
-   <li class="item-py"><a href="#">Descargar ambos</a></li>
-  </ul>
-
-
-
-  <table width="100%" cellpadding="10">
-	<tr>
-		<br><br><br><br><br><br>
-	</tr>
-	<tr>
-		<td align="left">
-			<textarea cols="50" rows="30">Area de texto!</textarea>    
-		</td>
-		<td align="right">
-			<table>
-				<tr>
- 					<textarea id="areaJS" readonly class="JSArea" cols="80" rows="13">Area JS</textarea>
-				</tr>
-				<tr>
-					<br><br><br>
- 					<textarea id="areaPython" readonly class="PythonArea" cols="80" rows="13">Area Python</textarea>
-				</tr>
-			</table>
-		</td>
-	</tr>
-  </table>
-
-
-
-
-
-    <footer class="text-center py-2">
-         2020 Copyright: <a href="https://github.com/AdriGomez95/">Adriana Gomez | 201504236</a>
-    </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fileOutput" class="archi"></div>
 </body>
 
 </html>
