@@ -19,22 +19,26 @@ server.listen(port, hostname, () => {
 
 
 
-/*
+
 var fs = require('fs');
 var parser = require('./gramatica');
+var arbol = require('./arbolRecorrido');
 
 
 fs.readFile('./entrada.txt', (err,data) => {
    // if (err) trhow err;
-    parser.parse(data.toString());
+    //parser.parse(data.toString());
+
+    var raiz = new arbol();
+    console.log(raiz.recorrerArbol( parser.parse(data.toString())));
 });
-*/
 
 
 
 
 
 
+/*
 const express = require("express");
 const app = express();
 var cors = require('cors');
@@ -85,3 +89,5 @@ app.post('/Analyze/', (req, res) => {
     }
 });
 
+
+*/

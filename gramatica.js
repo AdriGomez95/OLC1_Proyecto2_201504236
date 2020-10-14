@@ -72,24 +72,209 @@
   }
 */
 var gramatica = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,4],$V1=[1,3];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,5],$V1=[5,8],$V2=[1,19],$V3=[8,13],$V4=[1,43],$V5=[1,40],$V6=[1,41],$V7=[1,42],$V8=[1,44],$V9=[1,45],$Va=[20,25,29,30,31,32,34],$Vb=[1,61],$Vc=[1,62],$Vd=[13,36,37];
 var parser = {trace: function trace () { },
 yy: {},
-symbols_: {"error":2,"INICIO":3,"EXP":4,"EOF":5,"tk_public":6,"A":7,"tk_id":8,"tk_lla":9,"tk_llc":10,"tk_puntoComa":11,"tk_class":12,"tk_interface":13,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",6:"tk_public",8:"tk_id",9:"tk_lla",10:"tk_llc",11:"tk_puntoComa",12:"tk_class",13:"tk_interface"},
-productions_: [0,[3,2],[4,5],[4,3],[7,1],[7,1],[7,2]],
+symbols_: {"error":2,"INICIO":3,"CLASS":4,"EOF":5,"DEF":6,"tk_puntoComa":7,"tk_public":8,"A":9,"tk_id":10,"tk_lla":11,"METHODS":12,"tk_llc":13,"tk_class":14,"tk_interface":15,"DEFMET":16,"TYPE":17,"tk_pa":18,"PARAMETERS":19,"tk_pc":20,"SENTENCES":21,"tk_static":22,"tk_void":23,"tk_main":24,"tk_string":25,"tk_ca":26,"tk_cc":27,"tk_args":28,"tk_int":29,"tk_double":30,"tk_char":31,"tk_boolean":32,"DEFPA":33,"tk_coma":34,"DEFSENT":35,"tk_for":36,"tk_while":37,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",7:"tk_puntoComa",8:"tk_public",10:"tk_id",11:"tk_lla",13:"tk_llc",14:"tk_class",15:"tk_interface",18:"tk_pa",20:"tk_pc",22:"tk_static",23:"tk_void",24:"tk_main",25:"tk_string",26:"tk_ca",27:"tk_cc",28:"tk_args",29:"tk_int",30:"tk_double",31:"tk_char",32:"tk_boolean",34:"tk_coma",36:"tk_for",37:"tk_while"},
+productions_: [0,[3,2],[4,2],[4,1],[4,2],[6,6],[9,1],[9,1],[9,2],[12,2],[12,1],[12,2],[16,9],[16,7],[16,12],[17,1],[17,1],[17,1],[17,1],[17,1],[17,1],[17,1],[17,2],[19,2],[19,1],[19,2],[33,2],[33,2],[33,2],[33,2],[33,2],[33,1],[21,4],[21,3],[21,5],[21,4],[35,3],[35,3]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
 var $0 = $$.length - 1;
 switch (yystate) {
-case 3: case 6:
+case 1:
+ this.$ = new Nodo("RAIZ",""); 
+                            this.$.addHijo($$[$0-1]);
+                            return this.$;
+                        
+break;
+case 2:
+ this.$ = new Nodo("CLASE","");
+                        this.$.addHijo($$[$0-1]);
+                        this.$.addHijo($$[$0]);
+                    
+break;
+case 3:
+ this.$ = new Nodo("CLASE","");
+                        this.$.addHijo($$[$0]);
+                    
+break;
+case 4:
+console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una clase");
+break;
+case 5:
+ this.$ = new Nodo($$[$0-5],"public");
+                                                                this.$.addHijo($$[$0-4]);
+                                                                this.$.addHijo(new Nodo($$[$0-3],"id"));
+                                                                this.$.addHijo(new Nodo($$[$0-2],"{"));
+                                                                this.$.addHijo($$[$0-1]);
+                                                                this.$.addHijo(new Nodo($$[$0],"}"));
+                                                            
+break;
+case 6:
+ this.$ = new Nodo($$[$0],"class"); 
+break;
+case 7:
+ this.$ = new Nodo($$[$0],"interface"); 
+break;
+case 8: case 22:
 console.log("Error sintactico en la linea: "+this._$.first_line+" y columna: "+this._$.first_column);
+break;
+case 9:
+ this.$ = new Nodo("METODOS","");
+                                this.$.addHijo($$[$0-1]);
+                                this.$.addHijo($$[$0]);
+                            
+break;
+case 10:
+ this.$ = new Nodo("METODOS","");
+                                this.$.addHijo($$[$0]);
+                            
+break;
+case 11:
+console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo");
+break;
+case 12:
+ this.$ = new Nodo($$[$0-8],"public");
+                                                                                this.$.addHijo($$[$0-7]);
+                                                                                this.$.addHijo(new Nodo($$[$0-6],"id"));
+                                                                                this.$.addHijo(new Nodo($$[$0-5],"("));
+                                                                                this.$.addHijo($$[$0-4]);
+                                                                                this.$.addHijo(new Nodo($$[$0-3],")"));
+                                                                                this.$.addHijo(new Nodo($$[$0-2],"{"));
+                                                                                this.$.addHijo($$[$0-1]);
+                                                                                this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                            
+break;
+case 13:
+ this.$ = new Nodo($$[$0-6],"public");
+                                                                                this.$.addHijo($$[$0-5]);
+                                                                                this.$.addHijo(new Nodo($$[$0-4],"id"));
+                                                                                this.$.addHijo(new Nodo($$[$0-3],"("));
+                                                                                this.$.addHijo($$[$0-2]);
+                                                                                this.$.addHijo(new Nodo($$[$0-1],")"));
+                                                                                this.$.addHijo(new Nodo($$[$0],";"));
+                                                                            
+break;
+case 14:
+ this.$ = new Nodo($$[$0-8],"main");
+                                                                                                        this.$.addHijo(new Nodo($$[$0-1],"{"));
+                                                                                                        this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                                                    
+break;
+case 15:
+ this.$ = new Nodo($$[$0],"int"); 
+break;
+case 16:
+ this.$ = new Nodo($$[$0],"double"); 
+break;
+case 17:
+ this.$ = new Nodo($$[$0],"char"); 
+break;
+case 18:
+ this.$ = new Nodo($$[$0],"string"); 
+break;
+case 19:
+ this.$ = new Nodo($$[$0],"void"); 
+break;
+case 20:
+ this.$ = new Nodo($$[$0],"static"); 
+break;
+case 21:
+ this.$ = new Nodo($$[$0],"boolean"); 
+break;
+case 23:
+ this.$ = new Nodo("PARAMETROS","");
+                                    this.$.addHijo($$[$0-1]);
+                                    this.$.addHijo($$[$0]);
+                                
+break;
+case 24:
+ this.$ = new Nodo("PARAMETROS","");
+                                    this.$.addHijo($$[$0]);
+                                
+break;
+case 25:
+console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un parametro");
+break;
+case 26:
+ this.$ = new Nodo($$[$0-1],"int"); 
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                            
+break;
+case 27:
+ this.$ = new Nodo($$[$0-1],"double"); 
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                            
+break;
+case 28:
+ this.$ = new Nodo($$[$0-1],"char"); 
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                            
+break;
+case 29:
+ this.$ = new Nodo($$[$0-1],"string"); 
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                            
+break;
+case 30:
+ this.$ = new Nodo($$[$0-1],"boolean"); 
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                            
+break;
+case 31:
+ this.$ = new Nodo($$[$0],","); 
+                            
+break;
+case 32:
+ this.$ = new Nodo("SENTENCIAS","");
+                                                    this.$.addHijo($$[$0-3]);
+                                                    this.$.addHijo($$[$0-2]);
+                                                    this.$.addHijo(new Nodo($$[$0-1],"{"));
+                                                    this.$.addHijo(new Nodo($$[$0],"}"));
+                                                
+break;
+case 33:
+ this.$ = new Nodo("SENTENCIAS","");
+                                                    this.$.addHijo($$[$0-2]);
+                                                    this.$.addHijo(new Nodo($$[$0-1],"{"));
+                                                    this.$.addHijo(new Nodo($$[$0],"}"));
+                                                
+break;
+case 34:
+ this.$ = new Nodo("SENTENCIAS","");
+                                                    this.$.addHijo($$[$0-4]);
+                                                    this.$.addHijo($$[$0-3]);
+                                                    this.$.addHijo(new Nodo($$[$0-2],"{"));
+                                                    this.$.addHijo($$[$0-1]);
+                                                    this.$.addHijo(new Nodo($$[$0],"}"));
+                                                
+break;
+case 35:
+ this.$ = new Nodo("SENTENCIAS","");
+                                                    this.$.addHijo($$[$0-3]);
+                                                    this.$.addHijo(new Nodo($$[$0-2],"{"));
+                                                    this.$.addHijo($$[$0-1]);
+                                                    this.$.addHijo(new Nodo($$[$0],"}"));
+                                                
+break;
+case 36:
+ this.$ = new Nodo("for","");
+                                                                                this.$.addHijo(new Nodo($$[$0-1],"("));
+                                                                                this.$.addHijo(new Nodo($$[$0],")"));
+                                                                            
+break;
+case 37:
+ this.$ = new Nodo("while","");
+                                                                                this.$.addHijo(new Nodo($$[$0-1],"("));
+                                                                                this.$.addHijo(new Nodo($$[$0],")"));
+                                                                            
 break;
 }
 },
-table: [{2:$V0,3:1,4:2,6:$V1},{1:[3]},{5:[1,5]},{2:[1,9],7:6,12:[1,7],13:[1,8]},{11:[1,10]},{1:[2,1]},{8:[1,11]},{8:[2,4]},{8:[2,5]},{11:[1,12]},{2:$V0,4:13,6:$V1},{9:[1,14]},{8:[2,6]},{5:[2,3]},{10:[1,15]},{5:[2,2]}],
-defaultActions: {5:[2,1],7:[2,4],8:[2,5],12:[2,6],13:[2,3],15:[2,2]},
+table: [{2:[1,4],3:1,4:2,6:3,8:$V0},{1:[3]},{5:[1,6],6:7,8:$V0},o($V1,[2,3]),{7:[1,8]},{2:[1,12],9:9,14:[1,10],15:[1,11]},{1:[2,1]},o($V1,[2,2]),o($V1,[2,4]),{10:[1,13]},{10:[2,6]},{10:[2,7]},{7:[1,14]},{11:[1,15]},{10:[2,8]},{2:[1,18],8:$V2,12:16,16:17},{8:$V2,13:[1,20],16:21},o($V3,[2,10]),{7:[1,22]},{2:[1,31],17:23,22:[1,24],23:[1,29],25:[1,28],29:[1,25],30:[1,26],31:[1,27],32:[1,30]},o($V1,[2,5]),o($V3,[2,9]),o($V3,[2,11]),{10:[1,32]},{10:[2,20],23:[1,33]},{10:[2,15]},{10:[2,16]},{10:[2,17]},{10:[2,18]},{10:[2,19]},{10:[2,21]},{7:[1,34]},{18:[1,35]},{24:[1,36]},{10:[2,22]},{2:[1,39],19:37,25:$V4,29:$V5,30:$V6,31:$V7,32:$V8,33:38,34:$V9},{18:[1,46]},{20:[1,47],25:$V4,29:$V5,30:$V6,31:$V7,32:$V8,33:48,34:$V9},o($Va,[2,24]),{7:[1,49]},{10:[1,50]},{10:[1,51]},{10:[1,52]},{10:[1,53]},{10:[1,54]},o($Va,[2,31]),{25:[1,55]},{7:[1,57],11:[1,56]},o($Va,[2,23]),o($Va,[2,25]),o($Va,[2,26]),o($Va,[2,27]),o($Va,[2,28]),o($Va,[2,29]),o($Va,[2,30]),{26:[1,58]},{21:59,35:60,36:$Vb,37:$Vc},o($V3,[2,13]),{27:[1,63]},{13:[1,64],35:65,36:$Vb,37:$Vc},{11:[1,66]},{18:[1,67]},{18:[1,68]},{28:[1,69]},o($V3,[2,12]),{11:[1,70]},{13:[1,71],21:72,35:60,36:$Vb,37:$Vc},{20:[1,73]},{20:[1,74]},{20:[1,75]},{13:[1,76],21:77,35:60,36:$Vb,37:$Vc},o($Vd,[2,33]),{13:[1,78],35:65,36:$Vb,37:$Vc},{11:[2,36]},{11:[2,37]},{11:[1,79]},o($Vd,[2,32]),{13:[1,80],35:65,36:$Vb,37:$Vc},o($Vd,[2,35]),{13:[1,81]},o($Vd,[2,34]),o($V3,[2,14])],
+defaultActions: {6:[2,1],10:[2,6],11:[2,7],14:[2,8],25:[2,15],26:[2,16],27:[2,17],28:[2,18],29:[2,19],30:[2,21],34:[2,22],73:[2,36],74:[2,37]},
 parseError: function parseError (str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -337,6 +522,9 @@ _handle_error:
 
     return true;
 }};
+
+    let panic = false;
+    const Nodo = require('./arbolNodo');
 /* generated by jison-lex 0.3.4 */
 var lexer = (function(){
 var lexer = ({
@@ -665,48 +853,124 @@ options: {"case-insensitive":true},
 performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
-case 0: return 6; 
+case 0: return 8; 
 break;
-case 1: return 12; 
+case 1: return 14; 
 break;
-case 2: return 13; 
+case 2: return 15; 
 break;
-case 3: return 'tk_int'; 
+case 3: return 29; 
 break;
-case 4: return 'tk_double'; 
+case 4: return 30; 
 break;
-case 5: return 'tk_char'; 
+case 5: return 31; 
 break;
-case 6: return 'tk_string'; 
+case 6: return 25; 
 break;
-case 7: return 'tk_void'; 
+case 7: return 23; 
 break;
-case 8: return 9; 
+case 8: return 22; 
 break;
-case 9: return 10; 
+case 9: return 24; 
 break;
-case 10: return 'tk_pa'; 
+case 10: return 28; 
 break;
-case 11: return 'tk_pc'; 
+case 11: return 36; 
 break;
-case 12: return 'tk_coma'; 
+case 12: return 37; 
 break;
-case 13: return 11; 
+case 13: return 'tk_do'; 
 break;
-case 14: return 'tk_numero'; 
+case 14: return 'tk_if'; 
 break;
-case 15: return 8; 
+case 15: return 'tk_else'; 
 break;
-case 16: /*Los ignoramos*/ 
+case 16: return 32; 
 break;
-case 17: return 5; 
+case 17: return 'tk_break'; 
 break;
-case 18: console.log("Error Lexico: "+yy_.yytext+", linea "+yy_.yylloc.first_line+", columna "+yy_.yylloc.first_column); 
+case 18: return 'tk_continue'; 
+break;
+case 19: return 'tk_return'; 
+break;
+case 20: return 'tk_true'; 
+break;
+case 21: return 'tk_false'; 
+break;
+case 22: return 'tk_system'; 
+break;
+case 23:return '.';
+break;
+case 24: return 'tk_out'; 
+break;
+case 25: return 'tk_print'; 
+break;
+case 26: return 'tk_println'; 
+break;
+case 27: return 11; 
+break;
+case 28: return 13; 
+break;
+case 29: return 18; 
+break;
+case 30: return 20; 
+break;
+case 31: return 26; 
+break;
+case 32: return 27; 
+break;
+case 33: return 34; 
+break;
+case 34: return 7; 
+break;
+case 35:return '&&'
+break;
+case 36:return '||'
+break;
+case 37:return '^'
+break;
+case 38:return '<='
+break;
+case 39:return '>='
+break;
+case 40:return '<'
+break;
+case 41:return '>'
+break;
+case 42:return '=='
+break;
+case 43:return '='
+break;
+case 44:return '!='
+break;
+case 45:return '!'
+break;
+case 46:return '++'
+break;
+case 47:return '+'
+break;
+case 48:return '--'
+break;
+case 49:return '-'
+break;
+case 50:return '*'
+break;
+case 51:return '/'
+break;
+case 52: return 'tk_numero'; 
+break;
+case 53: return 10; 
+break;
+case 54: /*Los ignoramos*/ 
+break;
+case 55: return 5; 
+break;
+case 56: console.log("Error Lexico: "+yy_.yytext+"  - linea: "+yy_.yylloc.first_line+" - columna: "+yy_.yylloc.first_column); 
 break;
 }
 },
-rules: [/^(?:public\b)/i,/^(?:class\b)/i,/^(?:interface\b)/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:string\b)/i,/^(?:void\b)/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\()/i,/^(?:\))/i,/^(?:,)/i,/^(?:;)/i,/^(?:[0-9]+)/i,/^(?:[a-z]([a-z0-9_])*)/i,/^(?:[ \t\r\n\f])/i,/^(?:$)/i,/^(?:.)/i],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"inclusive":true}}
+rules: [/^(?:public\b)/i,/^(?:class\b)/i,/^(?:interface\b)/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:string\b)/i,/^(?:void\b)/i,/^(?:static\b)/i,/^(?:main\b)/i,/^(?:args\b)/i,/^(?:for\b)/i,/^(?:while\b)/i,/^(?:do\b)/i,/^(?:if\b)/i,/^(?:else\b)/i,/^(?:boolean\b)/i,/^(?:break\b)/i,/^(?:continue\b)/i,/^(?:return\b)/i,/^(?:true\b)/i,/^(?:false\b)/i,/^(?:system\b)/i,/^(?:\.)/i,/^(?:out\b)/i,/^(?:print\b)/i,/^(?:println\b)/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\()/i,/^(?:\))/i,/^(?:\[)/i,/^(?:\])/i,/^(?:,)/i,/^(?:;)/i,/^(?:&&)/i,/^(?:\|\|)/i,/^(?:\^)/i,/^(?:<=)/i,/^(?:>=)/i,/^(?:<)/i,/^(?:>)/i,/^(?:==)/i,/^(?:=)/i,/^(?:!=)/i,/^(?:!)/i,/^(?:\+\+)/i,/^(?:\+)/i,/^(?:--)/i,/^(?:-)/i,/^(?:\*)/i,/^(?:\/)/i,/^(?:[0-9]+)/i,/^(?:[a-z]([a-z0-9_])*)/i,/^(?:[ \t\r\n\f])/i,/^(?:$)/i,/^(?:.)/i],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56],"inclusive":true}}
 });
 return lexer;
 })();
