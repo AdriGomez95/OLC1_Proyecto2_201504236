@@ -16,6 +16,14 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     
+        
+    <script src="../js/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="../js/codemirror/lib/codemirror.css">
+    <script src="../js/codemirror/mode/clike/clike.js"></script> 
+                        <!--agregado.-->
+    <link rel="stylesheet" href="../js/codemirror/theme/material-darker.css">
+    
+
     <script src="../js/jquery.min.js"></script>
     <script src="../js/index.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -53,7 +61,7 @@
                     aria-expanded="false">Descargar</button>
                 <div class="dropdown-menu">
                     <a onclick="htmlReport()" class="dropdown-item" href="#">Ambos</a>
-                    <a onclick="htmlReport()" class="dropdown-item" href="#">JavaScript</a>
+                    <a onclick="ShowErrors()" class="dropdown-item" href="#">JavaScript</a>
                     <a onclick="htmlReport()" class="dropdown-item" href="#">Python</a>
                 </div>
             </li>
@@ -80,6 +88,7 @@
 							<!-- Aqui va el text de entrada donde se carga el archivo -->
                             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="t1">
                                 <textarea id="javaText" class="form-control" rows="18"></textarea>
+                                
                             </div>
                         </div>
                     </div>
@@ -96,6 +105,9 @@
                         <br><br>
 						<!-- Aqui van los text de salida -->
                         <h3 class="title">Salida JS</h3>
+                        <!--input type="file" class="load-json" onchange='processJson(this.files)' accept=".json">
+                        <button type="button" class="load-json">Cargar JSON</button>
+                        <button type="button" class="collapse">Comprimir</button-->
 						<textarea id="txtjs" readonly class="form-control" rows="18"></textarea>
 						<br><br>
                         <h3 class="title">Salida Python</h3>

@@ -19,7 +19,7 @@ server.listen(port, hostname, () => {
 
 
 
-
+/*
 var fs = require('fs');
 var parser = require('./gramatica');
 var arbol = require('./arbolRecorrido');
@@ -33,13 +33,13 @@ fs.readFile('./entrada.txt', (err,data) => {
     console.log(raiz.recorrerArbol( parser.parse(data.toString())));
     console.log(raiz.traduccionTree( parser.parse(data.toString())));
 });
+*/
 
 
 
 
 
 
-/*
 const express = require("express");
 const app = express();
 var cors = require('cors');
@@ -70,12 +70,12 @@ app.post('/Analyze/', (req, res) => {
         var fs = require('fs');
         //  se instancia al analizador o gramatica
         //var parser = require('./gramatica');
-        //var ast;
+        var ast;
         var parser = require('./gramatica');
         var arbol = require('./arbolRecorrido');
         var raiz = new arbol();
-        console.log(raiz.recorrerArbol( parser.parse(data.toString())));
-        console.log(raiz.traduccionTree( parser.parse(data.toString())));
+        //console.log(raiz.recorrerArbol( parser.parse(data.toString())));
+        //console.log(raiz.traduccionTree( parser.parse(data.toString())));
         try {
             ast = parser.parse(input.toString());
             fs.writeFileSync('./ast.json', JSON.stringify(ast, null, 2));
@@ -96,4 +96,3 @@ app.post('/Analyze/', (req, res) => {
 });
 
 
-*/

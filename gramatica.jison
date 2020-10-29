@@ -1,10 +1,12 @@
 /************************************************  Aqui los imports ************************************************/
 %{
-    let panic = false,
-    count = 1,
-    errors = new Array();
     token = new Array();
     const Nodo = require('./arbolNodo');
+    
+    let panic = false
+    let count = 1
+    let errors = new Array();
+    module.exports.errors = errors;
 %}
 
 /************************************************ Aqui va el lenguaje lexico ************************************************/
@@ -89,8 +91,20 @@
 [a-z]([a-z0-9_])*   %{ return 'tk_id'; %}
 
 <<EOF>>             %{ return 'EOF'; %}
-.                   %{ console.log("Error Lexico: "+yytext+"  - linea: "+yylloc.first_line+" - columna: "+yylloc.first_column); %}
-
+//.                   %{ console.log("Error Lexico: "+yytext+"  - linea: "+yylloc.first_line+" - columna: "+yylloc.first_column); %}
+.  { 
+	let row = yylloc.first_line;
+	let column = yylloc.first_column + 1;
+	let newError = count.toString() + "." +
+                " Error léxico: "+ yytext + 
+                " - linea: " + row +
+                " - columna: " + column +
+                ". No pertenece al lenguaje"
+                "\n";
+	count+=1;
+	errors.push(newError);
+	console.log('Error lexico: \'' + yytext + '\'. En fila: ' + row + ', columna: ' + column + '.');
+	}
 
 /lex
 
@@ -122,13 +136,8 @@ CLASS: CLASS DEF    { $$ = new Nodo("CLASE","");
     |DEF            { $$ = new Nodo("CLASE","");
                         $$.addHijo($1);
                     }        
-    |CLASS error tk_puntoComa  {$$ = new Nodo("CLASE","");
-                        $$.addHijo($1);
-                        $$.addHijo($2);
-                        console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");}
-    |error tk_puntoComa  {$$ = new Nodo("CLASE","");
-                        $$.addHijo($1);
-                    console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");};
+    |CLASS ERROR tk_puntoComa  //{console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");}
+    |ERROR tk_puntoComa;//  {console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");};
 
 
 DEF: tk_public A tk_id tk_lla METHODS tk_llc                { $$ = new Nodo($1,"public");
@@ -148,8 +157,11 @@ DEF: tk_public A tk_id tk_lla METHODS tk_llc                { $$ = new Nodo($1,"
 
 A: tk_class         { $$ = new Nodo($1,"class"); }
     |tk_interface   { $$ = new Nodo($1,"interface"); }
-    |error tk_puntoComa {console.log("Error sintactico en la linea: "+this._$.first_line+" y columna: "+this._$.first_column);};
-
+    |ERROR tk_puntoComa;
+    /*
+    |error tk_puntoComa {$$ = new Nodo("error","error");};
+                            //console.log("Error sintactico en la linea: "+this._$.first_line+" y columna: "+this._$.first_column);};
+    */
 
 METHODS: METHODS DEFMET     { $$ = new Nodo("METODOS","");
                                 $$.addHijo($1);
@@ -179,8 +191,8 @@ METHODS: METHODS DEFMET     { $$ = new Nodo("METODOS","");
     |PRINTSENTENCE              { $$ = new Nodo("METODOS","");
                                                 $$.addHijo($1);
                                             }            
-    |METHODS error tk_puntoComa  {console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");}          
-    |error tk_puntoComa {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");};
+    |METHODS ERROR tk_puntoComa  //{console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");}          
+    |ERROR tk_puntoComa;// {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");};
 
 
 VARIABLES1: VARIABLES1 tk_coma tk_id      { $$ = new Nodo("VARIAB","");
@@ -313,7 +325,7 @@ TYPE: tk_int        { $$ = new Nodo($1,"int"); }
     |tk_void        { $$ = new Nodo($1,"void"); }
     |tk_static      { $$ = new Nodo($1,"static"); }
     |tk_boolean     { $$ = new Nodo($1,"boolean"); }
-    |error tk_puntoComa {console.log("Error sintactico en la linea: "+this._$.first_line+" y columna: "+this._$.first_column);};
+    |ERROR tk_puntoComa;// {console.log("Error sintactico en la linea: "+this._$.first_line+" y columna: "+this._$.first_column);};
 
 
 PARAMETERS: PARAMETERS DEFPA    { $$ = new Nodo("PARAMET","");
@@ -323,7 +335,7 @@ PARAMETERS: PARAMETERS DEFPA    { $$ = new Nodo("PARAMET","");
     |DEFPA                      { $$ = new Nodo("PARAMET","");
                                     $$.addHijo($1);
                                 }
-    |error tk_puntoComa  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un parametro");};
+    |ERROR tk_puntoComa;//  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un parametro");};
     
 
 DEFPA: tk_int tk_id         { $$ = new Nodo($1,"int"); 
@@ -451,8 +463,8 @@ SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","1");
     |EXPRE  tk_puntoComa            { $$ = new Nodo("SENTENCIAS","18");
                                         $$.addHijo($1);
                                     }       
-    |SENTENCES error tk_puntoComa  {console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");}          
-    |error tk_puntoComa {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");};
+    |SENTENCES ERROR tk_puntoComa  {console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");}          
+    |ERROR tk_puntoComa;// {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");};
 
 
 
@@ -537,7 +549,7 @@ DEC: tk_id '++' { $$ = new Nodo("DEC","");
                     $$.addHijo(new Nodo($1,"id"));
                     $$.addHijo(new Nodo("--","sustraccion"));
                 }
-    |error tk_puntoComa  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una declaracion");};
+    |ERROR tk_puntoComa;//  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una declaracion");};
 
 
 
@@ -567,7 +579,7 @@ CONDITION: tk_int tk_id                 { $$ = new Nodo("COND","");
                                             $$.addHijo(new Nodo($2,"="));
                                             $$.addHijo(new Nodo($3,"id"));
                                         }                                                        
-    |error tk_puntoComa  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una condicion");};
+    |ERROR tk_puntoComa;//  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una condicion");};
 
 
 VARIABLES: VARIABLES tk_coma tk_id      { $$ = new Nodo("VARIAB","");
@@ -772,26 +784,25 @@ DEFEXP: tk_numero   { $$ = new Nodo("EXP","");
 
 /*
 ERROR: error {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una instruccion valida");};
+*/
 
 ERROR: error {
    if($1!=';' && !panic){
 			let row = this._$.first_line;
 			let column = this._$.first_column + 1;
-			let newError = "<td><center>" + count.toString() + "</center></td>\n" +
-                "<td><center>Sintáctico</center></td>\n" +
-                "<td><center>" + row + "</center></td>\n" +
-                "<td><center>" + column + "</center></td>\n" +
-                "<td><center>Se esperaba el inicio de una instrucción valida pero se obtuvo \"" + $1 + "\" </center></td>\n" +
-                "</tr>\n" +
-                "</center>\n";
+	        let newError = count.toString() + "." + 
+                " Error sintáctico: "+ $1 +               
+                "  - linea: " + row +
+                " - columna: " + column +
+                ". Se esperaba una instruccion correcta"
+                "\n";
 			count+=1;
 			errors.push(newError);
-			console.log('Este es un error sintactico: ' + $1 + '. En la linea: '+ (yylineno + 1) + ', columna: '+this._$.first_column);
+			console.log('Este es un error sintactico: ' + $1 + '. En la fila: '+ (yylineno + 1) + ', columna: '+this._$.first_column);
 			panic = true;
-        }
-	else if($1==';'){
+    }else if($1==';'){
 		panic = false;
 	}
 	}
 };
-*/
+
