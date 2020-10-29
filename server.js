@@ -31,6 +31,7 @@ fs.readFile('./entrada.txt', (err,data) => {
 
     var raiz = new arbol();
     console.log(raiz.recorrerArbol( parser.parse(data.toString())));
+    console.log(raiz.traduccionTree( parser.parse(data.toString())));
 });
 
 
@@ -68,8 +69,13 @@ app.post('/Analyze/', (req, res) => {
         const { input } = req.body;
         var fs = require('fs');
         //  se instancia al analizador o gramatica
+        //var parser = require('./gramatica');
+        //var ast;
         var parser = require('./gramatica');
-        var ast;
+        var arbol = require('./arbolRecorrido');
+        var raiz = new arbol();
+        console.log(raiz.recorrerArbol( parser.parse(data.toString())));
+        console.log(raiz.traduccionTree( parser.parse(data.toString())));
         try {
             ast = parser.parse(input.toString());
             fs.writeFileSync('./ast.json', JSON.stringify(ast, null, 2));

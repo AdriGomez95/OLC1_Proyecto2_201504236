@@ -72,12 +72,12 @@
   }
 */
 var gramatica = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,5],$V1=[5,8],$V2=[1,23],$V3=[1,28],$V4=[1,24],$V5=[1,25],$V6=[1,26],$V7=[1,27],$V8=[1,29],$V9=[8,10,13,18,23,25,26,28,52],$Va=[1,36],$Vb=[7,22],$Vc=[1,72],$Vd=[1,73],$Ve=[1,93],$Vf=[1,94],$Vg=[1,92],$Vh=[1,91],$Vi=[1,89],$Vj=[1,90],$Vk=[18,22,23,25,26,28,32],$Vl=[7,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$Vm=[2,131],$Vn=[1,131],$Vo=[1,120],$Vp=[1,127],$Vq=[1,138],$Vr=[1,128],$Vs=[1,129],$Vt=[1,137],$Vu=[1,130],$Vv=[1,136],$Vw=[1,117],$Vx=[1,124],$Vy=[1,123],$Vz=[1,125],$VA=[1,126],$VB=[1,132],$VC=[1,133],$VD=[1,134],$VE=[32,63,64,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$VF=[1,141],$VG=[1,150],$VH=[1,147],$VI=[1,156],$VJ=[1,161],$VK=[2,129],$VL=[7,32,65],$VM=[1,186],$VN=[1,187],$VO=[1,172],$VP=[1,173],$VQ=[1,174],$VR=[1,175],$VS=[1,176],$VT=[1,177],$VU=[1,178],$VV=[1,179],$VW=[1,180],$VX=[1,181],$VY=[1,182],$VZ=[1,183],$V_=[1,184],$V$=[1,185],$V01=[7,32,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$V11=[7,10,13,18,23,24,25,26,27,28,30,42,43,47,50,51,52,58,59,60,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$V21=[32,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$V31=[1,224],$V41=[1,225],$V51=[1,223],$V61=[1,226],$V71=[7,19];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,5],$V1=[2,5,8],$V2=[1,25],$V3=[1,30],$V4=[1,26],$V5=[1,27],$V6=[1,28],$V7=[1,29],$V8=[1,31],$V9=[1,32],$Va=[2,8,10,13,21,24,25,27,39,52],$Vb=[1,40],$Vc=[7,20],$Vd=[1,92],$Ve=[1,90],$Vf=[1,89],$Vg=[1,87],$Vh=[1,88],$Vi=[1,91],$Vj=[20,21,24,25,27,31,39],$Vk=[2,7,8,10,13,21,23,24,25,26,27,29,39,42,43,47,50,51,52,58,59,60,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$Vl=[7,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$Vm=[2,136],$Vn=[1,122],$Vo=[1,131],$Vp=[1,127],$Vq=[1,138],$Vr=[1,128],$Vs=[1,129],$Vt=[1,137],$Vu=[1,130],$Vv=[1,136],$Vw=[1,116],$Vx=[1,124],$Vy=[1,123],$Vz=[1,125],$VA=[1,126],$VB=[1,132],$VC=[1,133],$VD=[1,134],$VE=[31,63,64,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$VF=[1,141],$VG=[1,153],$VH=[1,147],$VI=[1,157],$VJ=[2,7,10,13,21,23,24,25,26,27,29,39,42,43,47,50,51,52,58,59,60,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$VK=[1,160],$VL=[2,134],$VM=[7,31,65],$VN=[1,186],$VO=[1,187],$VP=[1,172],$VQ=[1,173],$VR=[1,174],$VS=[1,175],$VT=[1,176],$VU=[1,177],$VV=[1,178],$VW=[1,179],$VX=[1,180],$VY=[1,181],$VZ=[1,182],$V_=[1,183],$V$=[1,184],$V01=[1,185],$V11=[7,31,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$V21=[31,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$V31=[1,222],$V41=[1,223],$V51=[1,221],$V61=[1,224],$V71=[7,22];
 var parser = {trace: function trace () { },
 yy: {},
-symbols_: {"error":2,"INICIO":3,"CLASS":4,"EOF":5,"DEF":6,"tk_puntoComa":7,"tk_public":8,"A":9,"tk_id":10,"tk_lla":11,"METHODS":12,"tk_llc":13,"tk_class":14,"tk_interface":15,"DEFMET":16,"VARIABLES1":17,"tk_boolean":18,"=":19,"BOOLEAN":20,"PRINTSENTENCE":21,"tk_coma":22,"tk_string":23,"tk_cadena":24,"tk_char":25,"tk_int":26,"tk_numero":27,"tk_double":28,"TYPE":29,"tk_pa":30,"PARAMETERS":31,"tk_pc":32,"SENTENCES":33,"tk_static":34,"tk_void":35,"tk_main":36,"tk_ca":37,"tk_cc":38,"tk_args":39,"DEFPA":40,"DEFSENT":41,"tk_do":42,"tk_while":43,"EXPRE":44,"VARIABLES":45,"RETURNS":46,"tk_for":47,"CONDITION":48,"DEC":49,"tk_if":50,"tk_else":51,"tk_system":52,".":53,"tk_out":54,"tk_print":55,"EXP":56,"tk_println":57,"tk_break":58,"tk_continue":59,"tk_return":60,"tk_true":61,"tk_false":62,"++":63,"--":64,",":65,"&&":66,"DEFEXP":67,"||":68,"!":69,"^":70,"<":71,"<=":72,">=":73,">":74,"==":75,"!=":76,"+":77,"-":78,"*":79,"/":80,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",7:"tk_puntoComa",8:"tk_public",10:"tk_id",11:"tk_lla",13:"tk_llc",14:"tk_class",15:"tk_interface",18:"tk_boolean",19:"=",22:"tk_coma",23:"tk_string",24:"tk_cadena",25:"tk_char",26:"tk_int",27:"tk_numero",28:"tk_double",30:"tk_pa",32:"tk_pc",34:"tk_static",35:"tk_void",36:"tk_main",37:"tk_ca",38:"tk_cc",39:"tk_args",42:"tk_do",43:"tk_while",47:"tk_for",50:"tk_if",51:"tk_else",52:"tk_system",53:".",54:"tk_out",55:"tk_print",57:"tk_println",58:"tk_break",59:"tk_continue",60:"tk_return",61:"tk_true",62:"tk_false",63:"++",64:"--",65:",",66:"&&",68:"||",69:"!",70:"^",71:"<",72:"<=",73:">=",74:">",75:"==",76:"!=",77:"+",78:"-",79:"*",80:"/"},
-productions_: [0,[3,2],[4,2],[4,1],[4,2],[6,6],[6,5],[9,1],[9,1],[9,2],[12,2],[12,1],[12,3],[12,2],[12,6],[12,5],[12,3],[12,2],[12,2],[17,3],[17,4],[17,4],[17,4],[17,4],[17,4],[17,4],[17,2],[17,2],[17,2],[17,2],[17,3],[17,3],[16,9],[16,8],[16,8],[16,7],[16,7],[16,6],[16,13],[29,1],[29,1],[29,1],[29,1],[29,1],[29,1],[29,1],[29,2],[31,2],[31,1],[31,2],[40,2],[40,2],[40,2],[40,2],[40,2],[40,1],[33,4],[33,3],[33,5],[33,4],[33,10],[33,9],[33,9],[33,8],[33,3],[33,2],[33,3],[33,2],[33,6],[33,5],[33,3],[33,2],[33,3],[33,2],[41,8],[41,4],[41,4],[41,5],[41,1],[21,8],[21,8],[46,1],[46,1],[46,2],[20,1],[20,1],[49,2],[49,2],[49,2],[48,2],[48,2],[48,2],[48,2],[48,3],[48,3],[48,2],[45,3],[45,4],[45,4],[45,4],[45,4],[45,4],[45,4],[45,2],[45,2],[45,2],[45,2],[45,3],[45,3],[44,3],[44,1],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,2],[56,2],[56,3],[56,1],[56,1],[56,1],[56,0],[67,1],[67,1],[67,1],[67,3]],
+symbols_: {"error":2,"INICIO":3,"CLASS":4,"EOF":5,"DEF":6,"tk_puntoComa":7,"tk_public":8,"A":9,"tk_id":10,"tk_lla":11,"METHODS":12,"tk_llc":13,"tk_class":14,"tk_interface":15,"DEFMET":16,"VARIABLES1":17,"BOOLEAN":18,"PRINTSENTENCE":19,"tk_coma":20,"tk_string":21,"=":22,"tk_cadena":23,"tk_char":24,"tk_int":25,"tk_numero":26,"tk_double":27,"TYPE":28,"tk_pa":29,"PARAMETERS":30,"tk_pc":31,"SENTENCES":32,"tk_static":33,"tk_void":34,"tk_main":35,"tk_ca":36,"tk_cc":37,"tk_args":38,"tk_boolean":39,"DEFPA":40,"DEFSENT":41,"tk_do":42,"tk_while":43,"EXPRE":44,"VARIABLES":45,"RETURNS":46,"tk_for":47,"CONDITION":48,"DEC":49,"tk_if":50,"tk_else":51,"tk_system":52,".":53,"tk_out":54,"tk_print":55,"EXP":56,"tk_println":57,"tk_break":58,"tk_continue":59,"tk_return":60,"tk_true":61,"tk_false":62,"++":63,"--":64,",":65,"&&":66,"DEFEXP":67,"||":68,"!":69,"^":70,"<":71,"<=":72,">=":73,">":74,"==":75,"!=":76,"+":77,"-":78,"*":79,"/":80,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",7:"tk_puntoComa",8:"tk_public",10:"tk_id",11:"tk_lla",13:"tk_llc",14:"tk_class",15:"tk_interface",20:"tk_coma",21:"tk_string",22:"=",23:"tk_cadena",24:"tk_char",25:"tk_int",26:"tk_numero",27:"tk_double",29:"tk_pa",31:"tk_pc",33:"tk_static",34:"tk_void",35:"tk_main",36:"tk_ca",37:"tk_cc",38:"tk_args",39:"tk_boolean",42:"tk_do",43:"tk_while",47:"tk_for",50:"tk_if",51:"tk_else",52:"tk_system",53:".",54:"tk_out",55:"tk_print",57:"tk_println",58:"tk_break",59:"tk_continue",60:"tk_return",61:"tk_true",62:"tk_false",63:"++",64:"--",65:",",66:"&&",68:"||",69:"!",70:"^",71:"<",72:"<=",73:">=",74:">",75:"==",76:"!=",77:"+",78:"-",79:"*",80:"/"},
+productions_: [0,[3,2],[4,2],[4,1],[4,3],[4,2],[6,6],[6,5],[9,1],[9,1],[9,2],[12,2],[12,1],[12,3],[12,2],[12,2],[12,1],[12,2],[12,1],[12,3],[12,2],[17,3],[17,4],[17,4],[17,4],[17,4],[17,4],[17,4],[17,2],[17,2],[17,2],[17,2],[17,3],[17,3],[16,9],[16,8],[16,8],[16,7],[16,7],[16,6],[16,13],[16,12],[28,1],[28,1],[28,1],[28,1],[28,1],[28,1],[28,1],[28,2],[30,2],[30,1],[30,2],[40,2],[40,2],[40,2],[40,2],[40,2],[40,1],[32,4],[32,3],[32,5],[32,4],[32,10],[32,9],[32,9],[32,8],[32,3],[32,2],[32,3],[32,2],[32,2],[32,1],[32,2],[32,1],[32,3],[32,2],[32,3],[32,2],[41,8],[41,4],[41,4],[41,5],[41,1],[19,9],[19,9],[46,1],[46,1],[46,2],[18,5],[18,5],[49,2],[49,2],[49,2],[48,2],[48,2],[48,2],[48,2],[48,3],[48,3],[48,2],[45,3],[45,4],[45,4],[45,4],[45,4],[45,4],[45,4],[45,2],[45,2],[45,2],[45,2],[45,3],[45,3],[44,3],[44,1],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,3],[56,2],[56,2],[56,3],[56,1],[56,1],[56,1],[56,0],[67,1],[67,1],[67,1],[67,3]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
@@ -101,9 +101,17 @@ case 3:
                     
 break;
 case 4:
-console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una clase");
+this.$ = new Nodo("CLASE","");
+                        this.$.addHijo($$[$0-2]);
+                        this.$.addHijo($$[$0-1]);
+                        console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");
 break;
 case 5:
+this.$ = new Nodo("CLASE","");
+                        this.$.addHijo($$[$0-1]);
+                    console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");
+break;
+case 6:
  this.$ = new Nodo($$[$0-5],"public");
                                                                 this.$.addHijo($$[$0-4]);
                                                                 this.$.addHijo(new Nodo($$[$0-3],"id"));
@@ -112,7 +120,7 @@ case 5:
                                                                 this.$.addHijo(new Nodo($$[$0],"}"));
                                                             
 break;
-case 6:
+case 7:
  this.$ = new Nodo($$[$0-4],"public");
                                                                 this.$.addHijo($$[$0-3]);
                                                                 this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -120,76 +128,62 @@ case 6:
                                                                 this.$.addHijo(new Nodo($$[$0],"}"));
                                                             
 break;
-case 7:
+case 8:
  this.$ = new Nodo($$[$0],"class"); 
 break;
-case 8:
+case 9:
  this.$ = new Nodo($$[$0],"interface"); 
 break;
-case 9: case 46:
+case 10: case 49:
 console.log("Error sintactico en la linea: "+this._$.first_line+" y columna: "+this._$.first_column);
 break;
-case 10:
+case 11: case 15:
  this.$ = new Nodo("METODOS","");
                                 this.$.addHijo($$[$0-1]);
                                 this.$.addHijo($$[$0]);
                             
 break;
-case 11:
+case 12: case 16:
  this.$ = new Nodo("METODOS","");
                                 this.$.addHijo($$[$0]);
                             
 break;
-case 12:
+case 13:
  this.$ = new Nodo("METODOS","");
                                 this.$.addHijo($$[$0-2]);
                                 this.$.addHijo($$[$0-1]);
                             
 break;
-case 13:
+case 14:
  this.$ = new Nodo("METODOS","");
                                 this.$.addHijo($$[$0-1]);
                             
 break;
-case 14:
- this.$ = new Nodo("METODOS","");
-                                                                this.$.addHijo($$[$0-5]);
-                                                                this.$.addHijo(new Nodo($$[$0-4],"boolean"));
-                                                                this.$.addHijo(new Nodo($$[$0-3],"id"));
-                                                                this.$.addHijo(new Nodo($$[$0-2],"="));
-                                                                this.$.addHijo($$[$0-1]);
-                                                            
-break;
-case 15:
- this.$ = new Nodo("METODOS","");
-                                                                this.$.addHijo(new Nodo($$[$0-4],"boolean"));
-                                                                this.$.addHijo(new Nodo($$[$0-3],"id"));
-                                                                this.$.addHijo(new Nodo($$[$0-2],"="));
-                                                                this.$.addHijo($$[$0-1]);
-                                                            
-break;
-case 16:
- this.$ = new Nodo("METODOS","");
-                                                this.$.addHijo($$[$0-2]);
-                                                this.$.addHijo($$[$0-1]);
-                                            
-break;
 case 17:
  this.$ = new Nodo("METODOS","");
                                                 this.$.addHijo($$[$0-1]);
+                                                this.$.addHijo($$[$0]);
                                             
 break;
 case 18:
-console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo");
+ this.$ = new Nodo("METODOS","");
+                                                this.$.addHijo($$[$0]);
+                                            
 break;
-case 19: case 96:
+case 19:
+console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");
+break;
+case 20:
+console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");
+break;
+case 21: case 101:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo(new Nodo($$[$0-1],","));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 20: case 97:
+case 22: case 102:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"string"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -197,7 +191,7 @@ case 20: case 97:
                                             this.$.addHijo(new Nodo($$[$0],"cadena"));
                                         
 break;
-case 21: case 98:
+case 23: case 103:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"char"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -205,7 +199,7 @@ case 21: case 98:
                                             this.$.addHijo(new Nodo($$[$0],"cadena"));
                                         
 break;
-case 22: case 99:
+case 24: case 104:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"int"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -213,7 +207,7 @@ case 22: case 99:
                                             this.$.addHijo(new Nodo($$[$0],"numero"));
                                         
 break;
-case 23: case 100:
+case 25: case 105:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"double"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -221,7 +215,7 @@ case 23: case 100:
                                             this.$.addHijo(new Nodo($$[$0],"numero"));
                                         
 break;
-case 24: case 101:
+case 26: case 106:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"int"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -229,7 +223,7 @@ case 24: case 101:
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 25: case 102:
+case 27: case 107:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"double"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
@@ -237,46 +231,46 @@ case 25: case 102:
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 26: case 103:
+case 28: case 108:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"string"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 27: case 104:
+case 29: case 109:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"char"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 28: case 105:
+case 30: case 110:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"int"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 29: case 106:
+case 31: case 111:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"double"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 30: case 107:
+case 32: case 112:
  this.$ = new Nodo("VARIAB","");
                                         this.$.addHijo(new Nodo($$[$0-2],"id"));
                                         this.$.addHijo(new Nodo($$[$0-1],"="));
                                         this.$.addHijo(new Nodo($$[$0],"numero"));
                                     
 break;
-case 31: case 108:
+case 33: case 113:
  this.$ = new Nodo("VARIAB","");
                                         this.$.addHijo(new Nodo($$[$0-2],"id"));
                                         this.$.addHijo(new Nodo($$[$0-1],"="));
                                         this.$.addHijo(new Nodo($$[$0],"cadena"));
                                     
 break;
-case 32:
- this.$ = new Nodo($$[$0-8],"public");
+case 34:
+ this.$ = new Nodo("public","1");
                                                                                     this.$.addHijo($$[$0-7]);
                                                                                     this.$.addHijo(new Nodo($$[$0-6],"id"));
                                                                                     this.$.addHijo(new Nodo($$[$0-5],"("));
@@ -287,8 +281,8 @@ case 32:
                                                                                     this.$.addHijo(new Nodo($$[$0],"}"));
                                                                                 
 break;
-case 33:
- this.$ = new Nodo($$[$0-7],"public");
+case 35:
+ this.$ = new Nodo("public","2");
                                                                                     this.$.addHijo($$[$0-6]);
                                                                                     this.$.addHijo(new Nodo($$[$0-5],"id"));
                                                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
@@ -296,8 +290,8 @@ case 33:
                                                                                     this.$.addHijo(new Nodo($$[$0],"}"));
                                                                                 
 break;
-case 34:
- this.$ = new Nodo($$[$0-7],"public");
+case 36:
+ this.$ = new Nodo("public","3");
                                                                                     this.$.addHijo($$[$0-6]);
                                                                                     this.$.addHijo(new Nodo($$[$0-5],"id"));
                                                                                     this.$.addHijo(new Nodo($$[$0-4],"("));
@@ -305,14 +299,14 @@ case 34:
                                                                                     this.$.addHijo(new Nodo($$[$0-2],")"));
                                                                                 
 break;
-case 35:
- this.$ = new Nodo($$[$0-6],"public");
+case 37:
+ this.$ = new Nodo("public","4");
                                                                                     this.$.addHijo($$[$0-5]);
                                                                                     this.$.addHijo(new Nodo($$[$0-4],"id"));
                                                                                 
 break;
-case 36:
- this.$ = new Nodo($$[$0-6],"public");
+case 38:
+ this.$ = new Nodo("public","5");
                                                                                     this.$.addHijo($$[$0-5]);
                                                                                     this.$.addHijo(new Nodo($$[$0-4],"id"));
                                                                                     this.$.addHijo(new Nodo($$[$0-3],"("));
@@ -321,100 +315,109 @@ case 36:
                                                                                     this.$.addHijo(new Nodo($$[$0],";"));
                                                                                 
 break;
-case 37:
- this.$ = new Nodo($$[$0-5],"public");
+case 39:
+ this.$ = new Nodo("public","6");
                                                                                     this.$.addHijo($$[$0-4]);
                                                                                     this.$.addHijo(new Nodo($$[$0-3],"id"));
                                                                                     this.$.addHijo(new Nodo($$[$0],";"));
                                                                                 
 break;
-case 38:
- this.$ = new Nodo($$[$0-9],"main");
+case 40:
+ this.$ = new Nodo("public","7");
+                                                                                                                this.$.addHijo(new Nodo($$[$0-9],"main"));
                                                                                                                 this.$.addHijo(new Nodo($$[$0-2],"{"));
-                                                                                                                this.$.addHijo(new Nodo($$[$0-1],"}"));
+                                                                                                                this.$.addHijo($$[$0-1]);
+                                                                                                                this.$.addHijo(new Nodo($$[$0],"}"));
                                                                                                             
 break;
-case 39:
- this.$ = new Nodo($$[$0],"int"); 
-break;
-case 40:
- this.$ = new Nodo($$[$0],"double"); 
-break;
 case 41:
- this.$ = new Nodo($$[$0],"char"); 
+ this.$ = new Nodo("public","8");
+                                                                                                                this.$.addHijo(new Nodo($$[$0-8],"main"));
+                                                                                                                this.$.addHijo(new Nodo($$[$0-1],"{"));
+                                                                                                                this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                                                            
 break;
 case 42:
- this.$ = new Nodo($$[$0],"string"); 
+ this.$ = new Nodo($$[$0],"int"); 
 break;
 case 43:
- this.$ = new Nodo($$[$0],"void"); 
+ this.$ = new Nodo($$[$0],"double"); 
 break;
 case 44:
- this.$ = new Nodo($$[$0],"static"); 
+ this.$ = new Nodo($$[$0],"char"); 
 break;
 case 45:
- this.$ = new Nodo($$[$0],"boolean"); 
+ this.$ = new Nodo($$[$0],"string"); 
+break;
+case 46:
+ this.$ = new Nodo($$[$0],"void"); 
 break;
 case 47:
+ this.$ = new Nodo($$[$0],"static"); 
+break;
+case 48:
+ this.$ = new Nodo($$[$0],"boolean"); 
+break;
+case 50:
  this.$ = new Nodo("PARAMET","");
                                     this.$.addHijo($$[$0-1]);
                                     this.$.addHijo($$[$0]);
                                 
 break;
-case 48:
+case 51:
  this.$ = new Nodo("PARAMET","");
                                     this.$.addHijo($$[$0]);
                                 
 break;
-case 49:
+case 52:
 console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un parametro");
 break;
-case 50:
+case 53:
  this.$ = new Nodo($$[$0-1],"int"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 51:
+case 54:
  this.$ = new Nodo($$[$0-1],"double"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 52:
+case 55:
  this.$ = new Nodo($$[$0-1],"char"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 53:
+case 56:
  this.$ = new Nodo($$[$0-1],"string"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 54:
+case 57:
  this.$ = new Nodo($$[$0-1],"boolean"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
                             
 break;
-case 55:
+case 58:
  this.$ = new Nodo($$[$0],","); 
                             
 break;
-case 56:
- this.$ = new Nodo("SENTENCIAS","");
+case 59:
+ this.$ = new Nodo("SENTENCIAS","1");
                                                 this.$.addHijo($$[$0-3]);
                                                 this.$.addHijo($$[$0-2]);
                                                 this.$.addHijo(new Nodo($$[$0-1],"{"));
                                                 this.$.addHijo(new Nodo($$[$0],"}"));
                                             
 break;
-case 57:
- this.$ = new Nodo("SENTENCIAS","");
+case 60:
+ this.$ = new Nodo("SENTENCIAS","2");
                                                 this.$.addHijo($$[$0-2]);
                                                 this.$.addHijo(new Nodo($$[$0-1],"{"));
                                                 this.$.addHijo(new Nodo($$[$0],"}"));
                                             
 break;
-case 58:
- this.$ = new Nodo("SENTENCIAS","");
+case 61:
+ this.$ = new Nodo("SENTENCIAS","3");
                                                     this.$.addHijo($$[$0-4]);
                                                     this.$.addHijo($$[$0-3]);
                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
@@ -422,16 +425,16 @@ case 58:
                                                     this.$.addHijo(new Nodo($$[$0],"}"));
                                                 
 break;
-case 59:
- this.$ = new Nodo("SENTENCIAS","");
+case 62:
+ this.$ = new Nodo("SENTENCIAS","4");
                                                     this.$.addHijo($$[$0-3]);
                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                     this.$.addHijo($$[$0-1]);
                                                     this.$.addHijo(new Nodo($$[$0],"}"));
                                                 
 break;
-case 60:
- this.$ = new Nodo("SENTENCIAS","");
+case 63:
+ this.$ = new Nodo("SENTENCIAS","5");
                                                                                         this.$.addHijo(new Nodo($$[$0-9],"doWhile"));
                                                                                         this.$.addHijo($$[$0-8]);
                                                                                         this.$.addHijo(new Nodo($$[$0-7],"{"));
@@ -442,8 +445,8 @@ case 60:
                                                                                         this.$.addHijo(new Nodo($$[$0-1],")"));
                                                                                     
 break;
-case 61:
- this.$ = new Nodo("SENTENCIAS","");
+case 64:
+ this.$ = new Nodo("SENTENCIAS","6");
                                                                                         this.$.addHijo(new Nodo($$[$0-8],"doWhile"));
                                                                                         this.$.addHijo(new Nodo($$[$0-7],"{"));
                                                                                         this.$.addHijo($$[$0-6]);
@@ -453,8 +456,8 @@ case 61:
                                                                                         this.$.addHijo(new Nodo($$[$0-1],")"));
                                                                                     
 break;
-case 62:
- this.$ = new Nodo("SENTENCIAS","");
+case 65:
+ this.$ = new Nodo("SENTENCIAS","7");
                                                                                 this.$.addHijo(new Nodo($$[$0-8],"doWhile"));
                                                                                 this.$.addHijo($$[$0-7]);
                                                                                 this.$.addHijo(new Nodo($$[$0-6],"{"));
@@ -464,8 +467,8 @@ case 62:
                                                                                 this.$.addHijo(new Nodo($$[$0-1],")"));
                                                                             
 break;
-case 63:
- this.$ = new Nodo("SENTENCIAS","");
+case 66:
+ this.$ = new Nodo("SENTENCIAS","8");
                                                                                 this.$.addHijo(new Nodo($$[$0-7],"doWhile"));
                                                                                 this.$.addHijo(new Nodo($$[$0-6],"{"));
                                                                                 this.$.addHijo(new Nodo($$[$0-5],"}"));
@@ -474,60 +477,69 @@ case 63:
                                                                                 this.$.addHijo(new Nodo($$[$0-1],")"));
                                                                             
 break;
-case 64: case 66:
- this.$ = new Nodo("SENTENCIAS","");
+case 67:
+ this.$ = new Nodo("SENTENCIAS","9");
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo($$[$0-1]);
-                                            this.$.addHijo(new Nodo($$[$0],";"));
-                                        
-break;
-case 65: case 67:
- this.$ = new Nodo("SENTENCIAS","");
-                                            this.$.addHijo($$[$0-1]);
-                                            this.$.addHijo(new Nodo($$[$0],";"));
                                         
 break;
 case 68:
- this.$ = new Nodo("SENTENCIAS","");
-                                                                this.$.addHijo($$[$0-5]);
-                                                                this.$.addHijo(new Nodo($$[$0-4],"boolean"));
-                                                                this.$.addHijo(new Nodo($$[$0-3],"id"));
-                                                                this.$.addHijo(new Nodo($$[$0-2],"="));
-                                                                this.$.addHijo($$[$0-1]);
-                                                            
+ this.$ = new Nodo("SENTENCIAS","10");
+                                            this.$.addHijo($$[$0-1]);
+                                        
 break;
 case 69:
- this.$ = new Nodo("SENTENCIAS","");
-                                                                this.$.addHijo(new Nodo($$[$0-4],"boolean"));
-                                                                this.$.addHijo(new Nodo($$[$0-3],"id"));
-                                                                this.$.addHijo(new Nodo($$[$0-2],"="));
-                                                                this.$.addHijo($$[$0-1]);
-                                                            
+ this.$ = new Nodo("SENTENCIAS","11");
+                                            this.$.addHijo($$[$0-2]);
+                                            this.$.addHijo($$[$0-1]);
+                                        
 break;
 case 70:
- this.$ = new Nodo("SENTENCIAS","");
-                                                this.$.addHijo($$[$0-2]);
-                                                this.$.addHijo($$[$0-1]);
-                                            
+ this.$ = new Nodo("SENTENCIAS","12");
+                                            this.$.addHijo($$[$0-1]);
+                                        
 break;
 case 71:
- this.$ = new Nodo("SENTENCIAS","");
-                                                this.$.addHijo($$[$0-1]);
-                                            
+ this.$ = new Nodo("SENTENCIAS","13");
+                                this.$.addHijo($$[$0-1]);
+                                this.$.addHijo($$[$0]);
+                            
 break;
 case 72:
- this.$ = new Nodo("SENTENCIAS","");
+ this.$ = new Nodo("SENTENCIAS","14");
+                                this.$.addHijo($$[$0]);
+                            
+break;
+case 73:
+ this.$ = new Nodo("SENTENCIAS","15");
+                                                this.$.addHijo($$[$0-1]);
+                                                this.$.addHijo($$[$0]);
+                                            
+break;
+case 74:
+ this.$ = new Nodo("SENTENCIAS","16");
+                                                this.$.addHijo($$[$0]);
+                                            
+break;
+case 75:
+ this.$ = new Nodo("SENTENCIAS","17");
                                         this.$.addHijo($$[$0-2]);
                                         this.$.addHijo($$[$0-1]);
                                     
 break;
-case 73:
- this.$ = new Nodo("SENTENCIAS","");
+case 76:
+ this.$ = new Nodo("SENTENCIAS","18");
                                         this.$.addHijo($$[$0-1]);
                                     
 break;
-case 74:
- this.$ = new Nodo("for","");
+case 77:
+console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");
+break;
+case 78:
+console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");
+break;
+case 79:
+ this.$ = new Nodo("for","1");
                                                                                 this.$.addHijo(new Nodo($$[$0-6],"("));
                                                                                 this.$.addHijo($$[$0-5]);
                                                                                 this.$.addHijo(new Nodo($$[$0-4],";"));
@@ -537,268 +549,275 @@ case 74:
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
                                                                             
 break;
-case 75:
- this.$ = new Nodo("while","");
+case 80:
+ this.$ = new Nodo("while","2");
                                                                                 this.$.addHijo(new Nodo($$[$0-2],"("));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
                                                                             
 break;
-case 76:
- this.$ = new Nodo("if","");
+case 81:
+ this.$ = new Nodo("if","3");
                                                                                 this.$.addHijo(new Nodo($$[$0-2],"("));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
                                                                             
 break;
-case 77:
- this.$ = new Nodo("elif","");
+case 82:
+ this.$ = new Nodo("elif","4");
                                                                                 this.$.addHijo(new Nodo($$[$0-2],"("));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
                                                                             
 break;
-case 78:
- this.$ = new Nodo("else","");
+case 83:
+ this.$ = new Nodo("else","5");
                                                                                 this.$.addHijo(new Nodo($$[$0],"else"));
                                                                             
 break;
-case 79:
- this.$ = new Nodo("print","");
-                                                                        this.$.addHijo(new Nodo($$[$0-2],"("));
-                                                                        this.$.addHijo($$[$0-1]);
-                                                                        this.$.addHijo(new Nodo($$[$0],")"));
+case 84: case 85:
+ this.$ = new Nodo("PRINT","");
+                                                                        this.$.addHijo(new Nodo($$[$0-3],"("));
+                                                                        this.$.addHijo($$[$0-2]);
+                                                                        this.$.addHijo(new Nodo($$[$0-1],")"));
                                                                     
 break;
-case 80:
- this.$ = new Nodo("println","");
-                                                                        this.$.addHijo(new Nodo($$[$0-2],"("));
-                                                                        this.$.addHijo($$[$0-1]);
-                                                                        this.$.addHijo(new Nodo($$[$0],")"));
-                                                                    
-break;
-case 81:
- this.$ = new Nodo("RETU","");
+case 86:
+ this.$ = new Nodo("RET","1");
                         this.$.addHijo(new Nodo($$[$0],"break"));
                     
 break;
-case 82:
- this.$ = new Nodo("RET","");
+case 87:
+ this.$ = new Nodo("RET","2");
                         this.$.addHijo(new Nodo($$[$0],"continue"));
                     
 break;
-case 83:
- this.$ = new Nodo("RET","");
+case 88:
+ this.$ = new Nodo("RET","3");
                         this.$.addHijo(new Nodo($$[$0-1],"return"));
                         this.$.addHijo($$[$0]);
                     
 break;
-case 84:
+case 89:
  this.$ = new Nodo("BOOLE","");
-                        this.$.addHijo(new Nodo($$[$0],"true"));
-                    
+                                                        this.$.addHijo(new Nodo($$[$0-4],"boolean"));
+                                                        this.$.addHijo(new Nodo($$[$0-3],"id"));
+                                                        this.$.addHijo(new Nodo($$[$0-2],"="));
+                                                        this.$.addHijo(new Nodo($$[$0-1],"true"));
+                                                    
 break;
-case 85:
+case 90:
  this.$ = new Nodo("BOOLE","");
-                        this.$.addHijo(new Nodo($$[$0],"false"));
-                    
+                                                        this.$.addHijo(new Nodo($$[$0-4],"boolean"));
+                                                        this.$.addHijo(new Nodo($$[$0-3],"id"));
+                                                        this.$.addHijo(new Nodo($$[$0-2],"="));
+                                                        this.$.addHijo(new Nodo($$[$0-1],"false"));
+                                                    
 break;
-case 86:
+case 91:
  this.$ = new Nodo("DEC",""); 
                     this.$.addHijo(new Nodo($$[$0-1],"id"));
                     this.$.addHijo(new Nodo("++","adicion"));
                 
 break;
-case 87:
+case 92:
  this.$ = new Nodo("DEC",""); 
                     this.$.addHijo(new Nodo($$[$0-1],"id"));
                     this.$.addHijo(new Nodo("--","sustraccion"));
                 
 break;
-case 88:
+case 93:
 console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una declaracion");
 break;
-case 89:
+case 94:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"int"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 90:
+case 95:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"double"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 91:
+case 96:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"char"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 92:
+case 97:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"string"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 93:
+case 98:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"numero"));
                                         
 break;
-case 94:
+case 99:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
                                         
 break;
-case 95:
+case 100:
 console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una condicion");
 break;
-case 109:
+case 114:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],","));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 110:
+case 115:
  this.$ = new Nodo("EXP","");
                                 this.$.addHijo($$[$0]);
                         
 break;
-case 111:
+case 116:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"&&"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 112:
+case 117:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"||"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 113:
+case 118:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"!"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 114:
+case 119:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"^"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 115:
+case 120:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"<"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 116:
+case 121:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"<="));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 117:
+case 122:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],">="));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 118:
+case 123:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],">"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 119:
+case 124:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"=="));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 120:
+case 125:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"!="));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 121:
+case 126:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"+"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 122:
+case 127:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"-"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 123:
+case 128:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"*"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 124:
+case 129:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"/"));
                             this.$.addHijo($$[$0]);
                         
 break;
-case 125:
+case 130:
  this.$ = new Nodo("EXP",""); 
                     this.$.addHijo($$[$0-1]);
                     this.$.addHijo(new Nodo($$[$0],"++"));
                 
 break;
-case 126:
+case 131:
  this.$ = new Nodo("EXP",""); 
                     this.$.addHijo($$[$0-1]);
                     this.$.addHijo(new Nodo($$[$0],"--"));
                 
 break;
-case 127: case 135:
+case 132: case 140:
  this.$ = new Nodo("EXP","");
+                            this.$.addHijo(new Nodo($$[$0-2],"("));
                             this.$.addHijo($$[$0-1]); 
+                            this.$.addHijo(new Nodo($$[$0],")"));
                         
 break;
-case 128: case 132:
- this.$ = new Nodo($$[$0],"numero"); 
+case 133: case 137:
+ this.$ = new Nodo("EXP","");
+                        this.$.addHijo(new Nodo($$[$0],"numero"));
+                    
 break;
-case 129: case 133:
- this.$ = new Nodo($$[$0],"id"); 
+case 134: case 138:
+ this.$ = new Nodo("EXP","");
+                        this.$.addHijo(new Nodo($$[$0],"id"));
+                    
 break;
-case 130: case 134:
- this.$ = new Nodo($$[$0],"cadena"); 
+case 135: case 139:
+ this.$ = new Nodo("EXP","");
+                        this.$.addHijo(new Nodo($$[$0],"cadena"));
+                    
 break;
 }
 },
-table: [{2:[1,4],3:1,4:2,6:3,8:$V0},{1:[3]},{5:[1,6],6:7,8:$V0},o($V1,[2,3]),{7:[1,8]},{2:[1,12],9:9,14:[1,10],15:[1,11]},{1:[2,1]},o($V1,[2,2]),o($V1,[2,4]),{10:[1,13]},{10:[2,7]},{10:[2,8]},{7:[1,14]},{11:[1,15]},{10:[2,9]},{2:[1,22],8:$V2,10:$V3,12:16,13:[1,17],16:18,17:19,18:[1,20],21:21,23:$V4,25:$V5,26:$V6,28:$V7,52:$V8},{8:$V2,10:$V3,13:[1,30],16:31,17:32,18:[1,33],21:34,23:$V4,25:$V5,26:$V6,28:$V7,52:$V8},o($V1,[2,6]),o($V9,[2,11]),{7:[1,35],22:$Va},{10:[1,37]},{7:[1,38]},{7:[1,39]},{2:[1,48],18:[1,47],23:[1,45],25:[1,44],26:[1,42],28:[1,43],29:40,34:[1,41],35:[1,46]},{10:[1,49]},{10:[1,50]},{10:[1,51]},{10:[1,52]},{19:[1,53]},{53:[1,54]},o($V1,[2,5]),o($V9,[2,10]),{7:[1,55],22:$Va},{10:[1,56]},{7:[1,57]},o($V9,[2,13]),{10:[1,58]},{19:[1,59]},o($V9,[2,17]),o($V9,[2,18]),{10:[1,60]},{10:[2,44],35:[1,61]},{10:[2,39]},{10:[2,40]},{10:[2,41]},{10:[2,42]},{10:[2,43]},{10:[2,45]},{7:[1,62]},o($Vb,[2,26],{19:[1,63]}),o($Vb,[2,27],{19:[1,64]}),o($Vb,[2,28],{19:[1,65]}),o($Vb,[2,29],{19:[1,66]}),{24:[1,68],27:[1,67]},{54:[1,69]},o($V9,[2,12]),{19:[1,70]},o($V9,[2,16]),o($Vb,[2,19]),{20:71,61:$Vc,62:$Vd},{30:[1,74]},{36:[1,75]},{10:[2,46]},{24:[1,76]},{24:[1,77]},{10:[1,79],27:[1,78]},{10:[1,81],27:[1,80]},o($Vb,[2,30]),o($Vb,[2,31]),{53:[1,82]},{20:83,61:$Vc,62:$Vd},{7:[1,84]},{7:[2,84]},{7:[2,85]},{2:[1,88],18:$Ve,22:$Vf,23:$Vg,25:$Vh,26:$Vi,28:$Vj,31:85,32:[1,86],40:87},{30:[1,95]},o($Vb,[2,20]),o($Vb,[2,21]),o($Vb,[2,22]),o($Vb,[2,24]),o($Vb,[2,23]),o($Vb,[2,25]),{55:[1,96],57:[1,97]},{7:[1,98]},o($V9,[2,15]),{18:$Ve,22:$Vf,23:$Vg,25:$Vh,26:$Vi,28:$Vj,32:[1,99],40:100},{7:[1,102],11:[1,101]},o($Vk,[2,48]),{7:[1,103]},{10:[1,104]},{10:[1,105]},{10:[1,106]},{10:[1,107]},{10:[1,108]},o($Vk,[2,55]),{23:[1,109]},{30:[1,110]},{30:[1,111]},o($V9,[2,14]),{7:[1,113],11:[1,112]},o($Vk,[2,47]),o($Vl,$Vm,{33:114,41:116,45:118,46:119,21:121,44:122,56:135,10:$Vn,13:[1,115],18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V9,[2,37]),o($Vk,[2,49]),o($Vk,[2,50]),o($Vk,[2,51]),o($Vk,[2,52]),o($Vk,[2,53]),o($Vk,[2,54]),{37:[1,139]},o($VE,$Vm,{56:140,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($VE,$Vm,{56:142,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($Vl,$Vm,{41:116,45:118,46:119,21:121,44:122,56:135,33:143,10:$Vn,13:[1,144],18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V9,[2,36]),o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,145],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V9,[2,35]),{11:[1,153]},{11:[1,154]},{7:[1,155],22:$VI},{7:[1,157]},{10:[1,158]},{7:[1,159]},{7:[1,160],65:$VJ},{30:[1,162]},{30:[1,163]},{30:[1,164]},{11:[2,78],50:[1,165]},{10:[1,166]},{10:[1,167]},{10:[1,168]},{10:[1,169]},o($Vl,$VK,{19:[1,170]}),{7:[2,81]},{7:[2,82]},o([7,63,64,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$Vm,{56:171,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($VL,[2,110],{63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$}),o($VE,$Vm,{56:188,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($V01,[2,128]),o($V01,[2,130]),{38:[1,189]},{32:[1,190],63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$},o($V01,$VK),{32:[1,191],63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$},o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,192],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V9,[2,34]),o($V9,[2,33]),{11:[1,193]},{11:[1,194]},{7:[1,195],22:$VI},{7:[1,196]},{10:[1,197]},{7:[1,198]},{7:[1,199],65:$VJ},o($Vl,$Vm,{41:116,45:118,46:119,21:121,44:122,56:135,33:201,10:$Vn,13:[1,200],18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{41:116,45:118,46:119,21:121,44:122,56:135,33:202,10:$Vn,13:[1,203],18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V11,[2,65]),{10:[1,204]},o($V11,[2,67]),{19:[1,205]},o($V11,[2,71]),o($V11,[2,73]),o($V01,$Vm,{56:206,10:$VF,24:$Vq,27:$Vt,30:$Vv}),{2:[1,212],23:[1,211],25:[1,210],26:[1,208],28:[1,209],48:207},o($V21,$Vm,{56:135,44:213,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($V21,$Vm,{56:135,44:214,10:$VF,24:$Vq,27:$Vt,30:$Vv}),{30:[1,215]},o($Vb,[2,103],{19:[1,216]}),o($Vb,[2,104],{19:[1,217]}),o($Vb,[2,105],{19:[1,218]}),o($Vb,[2,106],{19:[1,219]}),{24:[1,221],27:[1,220]},{7:[2,83],63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$},{10:$V31,24:$V41,27:$V51,30:$V61,67:222},{10:$V31,24:$V41,27:$V51,30:$V61,67:227},{10:$V31,24:$V41,27:$V51,30:$V61,67:228},{10:$V31,24:$V41,27:$V51,30:$V61,67:229},{10:$V31,24:$V41,27:$V51,30:$V61,67:230},{10:$V31,24:$V41,27:$V51,30:$V61,67:231},{10:$V31,24:$V41,27:$V51,30:$V61,67:232},{10:$V31,24:$V41,27:$V51,30:$V61,67:233},{10:$V31,24:$V41,27:$V51,30:$V61,67:234},{10:$V31,24:$V41,27:$V51,30:$V61,67:235},{10:$V31,24:$V41,27:$V51,30:$V61,67:236},{10:$V31,24:$V41,27:$V51,30:$V61,67:237},{10:$V31,24:$V41,27:$V51,30:$V61,67:238},{10:$V31,24:$V41,27:$V51,30:$V61,67:239},o($V01,[2,125]),o($V01,[2,126]),{32:[1,240],63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$},{39:[1,241]},{7:[2,79]},{7:[2,80]},o($V9,[2,32]),o($Vl,$Vm,{41:116,45:118,46:119,21:121,44:122,56:135,33:243,10:$Vn,13:[1,242],18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{41:116,45:118,46:119,21:121,44:122,56:135,33:244,10:$Vn,13:[1,245],18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V11,[2,64]),o($V11,[2,66]),{19:[1,246]},o($V11,[2,70]),o($V11,[2,72]),o($V11,[2,57]),o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,247],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,248],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),{43:[1,249]},o($Vb,[2,96]),{20:250,61:$Vc,62:$Vd},o($VL,[2,109],{63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$}),{7:[1,251],19:[1,252]},{10:[1,253]},{10:[1,254]},{10:[1,255]},{10:[1,256]},{7:[1,257]},{32:[1,258],65:$VJ},{32:[1,259],65:$VJ},o($V21,$Vm,{56:135,44:260,10:$VF,24:$Vq,27:$Vt,30:$Vv}),{24:[1,261]},{24:[1,262]},{10:[1,264],27:[1,263]},{10:[1,266],27:[1,265]},o($Vb,[2,107]),o($Vb,[2,108]),o($V01,[2,111]),o($V01,[2,132]),o($V01,[2,133]),o($V01,[2,134]),o($VE,$Vm,{56:267,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($V01,[2,112]),o($V01,[2,113]),o($V01,[2,114]),o($V01,[2,115]),o($V01,[2,116]),o($V01,[2,117]),o($V01,[2,118]),o($V01,[2,119]),o($V01,[2,120]),o($V01,[2,121]),o($V01,[2,122]),o($V01,[2,123]),o($V01,[2,124]),o($V01,[2,127]),{32:[1,268]},o($V11,[2,56]),o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,269],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,270],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),{43:[1,271]},{20:272,61:$Vc,62:$Vd},o($V11,[2,59]),{43:[1,273]},{30:[1,274]},{7:[1,275]},o($Vl,$Vm,{56:135,44:276,10:$VF,24:$Vq,27:$Vt,30:$Vv}),{10:[1,278],27:[1,277]},o($V71,[2,89]),o($V71,[2,90]),o($V71,[2,91]),o($V71,[2,92]),o($V71,[2,95]),{11:[2,75]},{11:[2,76]},{32:[1,279],65:$VJ},o($Vb,[2,97]),o($Vb,[2,98]),o($Vb,[2,99]),o($Vb,[2,101]),o($Vb,[2,100]),o($Vb,[2,102]),{32:[1,280],63:$VM,64:$VN,66:$VO,68:$VP,69:$VQ,70:$VR,71:$VS,72:$VT,73:$VU,74:$VV,75:$VW,76:$VX,77:$VY,78:$VZ,79:$V_,80:$V$},{11:[1,281]},o($V11,[2,58]),{43:[1,282]},{30:[1,283]},{7:[1,284]},{30:[1,285]},o($V21,$Vm,{56:135,44:286,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($V11,[2,69]),{7:[1,287],65:$VJ},o($V71,[2,93]),o($V71,[2,94]),{11:[2,77]},o($V01,[2,135]),o($Vl,$Vm,{41:116,45:118,46:119,21:121,44:122,56:135,33:288,10:$Vn,18:$Vo,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),{30:[1,289]},o($V21,$Vm,{56:135,44:290,10:$VF,24:$Vq,27:$Vt,30:$Vv}),o($V11,[2,68]),o($V21,$Vm,{56:135,44:291,10:$VF,24:$Vq,27:$Vt,30:$Vv}),{32:[1,292],65:$VJ},{2:[1,295],10:[1,294],49:293},o($Vl,$Vm,{56:135,41:146,45:148,46:149,21:151,44:152,10:$Vn,13:[1,296],18:$VG,23:$Vp,24:$Vq,25:$Vr,26:$Vs,27:$Vt,28:$Vu,30:$Vv,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V8,58:$VB,59:$VC,60:$VD}),o($V21,$Vm,{56:135,44:297,10:$VF,24:$Vq,27:$Vt,30:$Vv}),{32:[1,298],65:$VJ},{32:[1,299],65:$VJ},{7:[1,300]},{32:[1,301]},{63:[1,302],64:[1,303]},{7:[1,304]},o($V9,[2,38]),{32:[1,305],65:$VJ},{7:[1,306]},{7:[1,307]},o($V11,[2,63]),{11:[2,74]},{32:[2,86]},{32:[2,87]},{32:[2,88]},{7:[1,308]},o($V11,[2,62]),o($V11,[2,61]),o($V11,[2,60])],
-defaultActions: {6:[2,1],10:[2,7],11:[2,8],14:[2,9],42:[2,39],43:[2,40],44:[2,41],45:[2,42],46:[2,43],47:[2,45],62:[2,46],72:[2,84],73:[2,85],132:[2,81],133:[2,82],190:[2,79],191:[2,80],258:[2,75],259:[2,76],279:[2,77],301:[2,74],302:[2,86],303:[2,87],304:[2,88]},
+table: [{2:[1,4],3:1,4:2,6:3,8:$V0},{1:[3]},{2:[1,8],5:[1,6],6:7,8:$V0},o($V1,[2,3]),{7:[1,9]},{2:[1,13],9:10,14:[1,11],15:[1,12]},{1:[2,1]},o($V1,[2,2]),{7:[1,14]},o($V1,[2,5]),{10:[1,15]},{10:[2,8]},{10:[2,9]},{7:[1,16]},o($V1,[2,4]),{11:[1,17]},{10:[2,10]},{2:[1,24],8:$V2,10:$V3,12:18,13:[1,19],16:20,17:21,18:22,19:23,21:$V4,24:$V5,25:$V6,27:$V7,39:$V8,52:$V9},{2:[1,38],8:$V2,10:$V3,13:[1,33],16:34,17:35,18:36,19:37,21:$V4,24:$V5,25:$V6,27:$V7,39:$V8,52:$V9},o($V1,[2,7]),o($Va,[2,12]),{7:[1,39],20:$Vb},o($Va,[2,16]),o($Va,[2,18]),{7:[1,41]},{2:[1,50],21:[1,47],24:[1,46],25:[1,44],27:[1,45],28:42,33:[1,43],34:[1,48],39:[1,49]},{10:[1,51]},{10:[1,52]},{10:[1,53]},{10:[1,54]},{22:[1,55]},{10:[1,56]},{53:[1,57]},o($V1,[2,6]),o($Va,[2,11]),{7:[1,58],20:$Vb},o($Va,[2,15]),o($Va,[2,17]),{7:[1,59]},o($Va,[2,14]),{10:[1,60]},o($Va,[2,20]),{10:[1,61]},{10:[2,47],34:[1,62]},{10:[2,42]},{10:[2,43]},{10:[2,44]},{10:[2,45]},{10:[2,46]},{10:[2,48]},{7:[1,63]},o($Vc,[2,28],{22:[1,64]}),o($Vc,[2,29],{22:[1,65]}),o($Vc,[2,30],{22:[1,66]}),o($Vc,[2,31],{22:[1,67]}),{23:[1,69],26:[1,68]},{22:[1,70]},{54:[1,71]},o($Va,[2,13]),o($Va,[2,19]),o($Vc,[2,21]),{29:[1,72]},{35:[1,73]},{10:[2,49]},{23:[1,74]},{23:[1,75]},{10:[1,77],26:[1,76]},{10:[1,79],26:[1,78]},o($Vc,[2,32]),o($Vc,[2,33]),{61:[1,80],62:[1,81]},{53:[1,82]},{2:[1,86],20:$Vd,21:$Ve,24:$Vf,25:$Vg,27:$Vh,30:83,31:[1,84],39:$Vi,40:85},{29:[1,93]},o($Vc,[2,22]),o($Vc,[2,23]),o($Vc,[2,24]),o($Vc,[2,26]),o($Vc,[2,25]),o($Vc,[2,27]),{7:[1,94]},{7:[1,95]},{55:[1,96],57:[1,97]},{20:$Vd,21:$Ve,24:$Vf,25:$Vg,27:$Vh,31:[1,98],39:$Vi,40:99},{7:[1,101],11:[1,100]},o($Vj,[2,51]),{7:[1,102]},{10:[1,103]},{10:[1,104]},{10:[1,105]},{10:[1,106]},{10:[1,107]},o($Vj,[2,58]),{21:[1,108]},o($Vk,[2,89]),o($Vk,[2,90]),{29:[1,109]},{29:[1,110]},{7:[1,112],11:[1,111]},o($Vj,[2,50]),o($Vl,$Vm,{32:113,41:115,45:117,46:118,18:119,19:120,44:121,56:135,2:$Vn,10:$Vo,13:[1,114],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Va,[2,39]),o($Vj,[2,52]),o($Vj,[2,53]),o($Vj,[2,54]),o($Vj,[2,55]),o($Vj,[2,56]),o($Vj,[2,57]),{36:[1,139]},o($VE,$Vm,{56:140,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($VE,$Vm,{56:142,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($Vl,$Vm,{41:115,45:117,46:118,18:119,19:120,44:121,56:135,32:143,2:$Vn,10:$Vo,13:[1,144],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Va,[2,38]),o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,145],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Va,[2,37]),{11:[1,154]},{11:[1,155]},{7:[1,156],20:$VI},{7:[1,158]},o($VJ,[2,72]),o($VJ,[2,74]),{7:[1,159],65:$VK},{7:[1,161]},{29:[1,162]},{29:[1,163]},{29:[1,164]},{11:[2,83],50:[1,165]},{10:[1,166]},{10:[1,167]},{10:[1,168]},{10:[1,169]},o($Vl,$VL,{22:[1,170]}),{7:[2,86]},{7:[2,87]},o([7,63,64,66,68,69,70,71,72,73,74,75,76,77,78,79,80],$Vm,{56:171,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($VM,[2,115],{63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01}),o($VE,$Vm,{56:188,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($V11,[2,133]),o($V11,[2,135]),{37:[1,189]},{31:[1,190],63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01},o($V11,$VL),{31:[1,191],63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01},o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,192],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Va,[2,36]),o($Va,[2,35]),{11:[1,193]},{11:[1,194]},{7:[1,195],20:$VI},{7:[1,196]},o($VJ,[2,71]),o($VJ,[2,73]),{7:[1,197],65:$VK},{7:[1,198]},o($Vl,$Vm,{41:115,45:117,46:118,18:119,19:120,44:121,56:135,32:200,2:$Vn,10:$Vo,13:[1,199],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{41:115,45:117,46:118,18:119,19:120,44:121,56:135,32:201,2:$Vn,10:$Vo,13:[1,202],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($VJ,[2,68]),{10:[1,203]},o($VJ,[2,70]),o($VJ,[2,76]),o($V11,$Vm,{56:204,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($VJ,[2,78]),{2:[1,210],21:[1,209],24:[1,208],25:[1,206],27:[1,207],48:205},o($V21,$Vm,{56:135,44:211,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($V21,$Vm,{56:135,44:212,10:$VF,23:$Vq,26:$Vt,29:$Vv}),{29:[1,213]},o($Vc,[2,108],{22:[1,214]}),o($Vc,[2,109],{22:[1,215]}),o($Vc,[2,110],{22:[1,216]}),o($Vc,[2,111],{22:[1,217]}),{23:[1,219],26:[1,218]},{7:[2,88],63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01},{10:$V31,23:$V41,26:$V51,29:$V61,67:220},{10:$V31,23:$V41,26:$V51,29:$V61,67:225},{10:$V31,23:$V41,26:$V51,29:$V61,67:226},{10:$V31,23:$V41,26:$V51,29:$V61,67:227},{10:$V31,23:$V41,26:$V51,29:$V61,67:228},{10:$V31,23:$V41,26:$V51,29:$V61,67:229},{10:$V31,23:$V41,26:$V51,29:$V61,67:230},{10:$V31,23:$V41,26:$V51,29:$V61,67:231},{10:$V31,23:$V41,26:$V51,29:$V61,67:232},{10:$V31,23:$V41,26:$V51,29:$V61,67:233},{10:$V31,23:$V41,26:$V51,29:$V61,67:234},{10:$V31,23:$V41,26:$V51,29:$V61,67:235},{10:$V31,23:$V41,26:$V51,29:$V61,67:236},{10:$V31,23:$V41,26:$V51,29:$V61,67:237},o($V11,[2,130]),o($V11,[2,131]),{31:[1,238],63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01},{38:[1,239]},{7:[1,240]},{7:[1,241]},o($Va,[2,34]),o($Vl,$Vm,{41:115,45:117,46:118,18:119,19:120,44:121,56:135,32:243,2:$Vn,10:$Vo,13:[1,242],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{41:115,45:117,46:118,18:119,19:120,44:121,56:135,32:244,2:$Vn,10:$Vo,13:[1,245],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($VJ,[2,67]),o($VJ,[2,69]),o($VJ,[2,75]),o($VJ,[2,77]),o($VJ,[2,60]),o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,246],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,247],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),{43:[1,248]},o($Vc,[2,101]),o($VM,[2,114],{63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01}),{7:[1,249],22:[1,250]},{10:[1,251]},{10:[1,252]},{10:[1,253]},{10:[1,254]},{7:[1,255]},{31:[1,256],65:$VK},{31:[1,257],65:$VK},o($V21,$Vm,{56:135,44:258,10:$VF,23:$Vq,26:$Vt,29:$Vv}),{23:[1,259]},{23:[1,260]},{10:[1,262],26:[1,261]},{10:[1,264],26:[1,263]},o($Vc,[2,112]),o($Vc,[2,113]),o($V11,[2,116]),o($V11,[2,137]),o($V11,[2,138]),o($V11,[2,139]),o($VE,$Vm,{56:265,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($V11,[2,117]),o($V11,[2,118]),o($V11,[2,119]),o($V11,[2,120]),o($V11,[2,121]),o($V11,[2,122]),o($V11,[2,123]),o($V11,[2,124]),o($V11,[2,125]),o($V11,[2,126]),o($V11,[2,127]),o($V11,[2,128]),o($V11,[2,129]),o($V11,[2,132]),{31:[1,266]},o($Vk,[2,84]),o($Vk,[2,85]),o($VJ,[2,59]),o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,267],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,268],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),{43:[1,269]},o($VJ,[2,62]),{43:[1,270]},{29:[1,271]},o($Vl,$Vm,{56:135,44:272,10:$VF,23:$Vq,26:$Vt,29:$Vv}),{10:[1,274],26:[1,273]},o($V71,[2,94]),o($V71,[2,95]),o($V71,[2,96]),o($V71,[2,97]),o($V71,[2,100]),{11:[2,80]},{11:[2,81]},{31:[1,275],65:$VK},o($Vc,[2,102]),o($Vc,[2,103]),o($Vc,[2,104]),o($Vc,[2,106]),o($Vc,[2,105]),o($Vc,[2,107]),{31:[1,276],63:$VN,64:$VO,66:$VP,68:$VQ,69:$VR,70:$VS,71:$VT,72:$VU,73:$VV,74:$VW,75:$VX,76:$VY,77:$VZ,78:$V_,79:$V$,80:$V01},{11:[1,277]},o($VJ,[2,61]),{43:[1,278]},{29:[1,279]},{29:[1,280]},o($V21,$Vm,{56:135,44:281,10:$VF,23:$Vq,26:$Vt,29:$Vv}),{7:[1,282],65:$VK},o($V71,[2,98]),o($V71,[2,99]),{11:[2,82]},o($V11,[2,140]),o($Vl,$Vm,{41:115,45:117,46:118,18:119,19:120,44:121,56:135,32:283,2:$Vn,10:$Vo,13:[1,284],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$Vw,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),{29:[1,285]},o($V21,$Vm,{56:135,44:286,10:$VF,23:$Vq,26:$Vt,29:$Vv}),o($V21,$Vm,{56:135,44:287,10:$VF,23:$Vq,26:$Vt,29:$Vv}),{31:[1,288],65:$VK},{2:[1,291],10:[1,290],49:289},o($Vl,$Vm,{56:135,41:146,45:148,46:149,18:150,19:151,44:152,2:$VG,10:$Vo,13:[1,292],21:$Vp,23:$Vq,24:$Vr,25:$Vs,26:$Vt,27:$Vu,29:$Vv,39:$V8,42:$VH,43:$Vx,47:$Vy,50:$Vz,51:$VA,52:$V9,58:$VB,59:$VC,60:$VD}),o($Va,[2,41]),o($V21,$Vm,{56:135,44:293,10:$VF,23:$Vq,26:$Vt,29:$Vv}),{31:[1,294],65:$VK},{31:[1,295],65:$VK},{7:[1,296]},{31:[1,297]},{63:[1,298],64:[1,299]},{7:[1,300]},o($Va,[2,40]),{31:[1,301],65:$VK},{7:[1,302]},{7:[1,303]},o($VJ,[2,66]),{11:[2,79]},{31:[2,91]},{31:[2,92]},{31:[2,93]},{7:[1,304]},o($VJ,[2,65]),o($VJ,[2,64]),o($VJ,[2,63])],
+defaultActions: {6:[2,1],11:[2,8],12:[2,9],16:[2,10],44:[2,42],45:[2,43],46:[2,44],47:[2,45],48:[2,46],49:[2,48],63:[2,49],132:[2,86],133:[2,87],256:[2,80],257:[2,81],275:[2,82],297:[2,79],298:[2,91],299:[2,92],300:[2,93]},
 parseError: function parseError (str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -1047,7 +1066,10 @@ _handle_error:
     return true;
 }};
 
-    let panic = false;
+    let panic = false,
+    count = 1,
+    errors = new Array();
+    token = new Array();
     const Nodo = require('./arbolNodo');
 /* generated by jison-lex 0.3.4 */
 var lexer = (function(){
@@ -1379,7 +1401,7 @@ var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:/*skip*/
 break;
-case 1:yy_.yytext.substr(1,yy_.yyleng-2);  return 24; 
+case 1:yy_.yytext =yy_.yytext.substr(1,yy_.yyleng-2);  return 23; 
 break;
 case 2:/* skip multiline */      //%{yy_.yytext.substr(1,yy_.yyleng-2);  return 'tk_comentario_multilinea'; %}
 break;
@@ -1391,21 +1413,21 @@ case 5: return 14;
 break;
 case 6: return 15; 
 break;
-case 7: return 26; 
+case 7: return 25; 
 break;
-case 8: return 28; 
+case 8: return 27; 
 break;
-case 9: return 25; 
+case 9: return 24; 
 break;
-case 10: return 23; 
+case 10: return 21; 
 break;
-case 11: return 35; 
+case 11: return 34; 
 break;
-case 12: return 34; 
+case 12: return 33; 
 break;
-case 13: return 36; 
+case 13: return 35; 
 break;
-case 14: return 39; 
+case 14: return 38; 
 break;
 case 15: return 47; 
 break;
@@ -1417,7 +1439,7 @@ case 18: return 50;
 break;
 case 19: return 51; 
 break;
-case 20: return 18; 
+case 20: return 39; 
 break;
 case 21: return 58; 
 break;
@@ -1443,15 +1465,15 @@ case 31: return 11;
 break;
 case 32: return 13; 
 break;
-case 33: return 30; 
+case 33: return 29; 
 break;
-case 34: return 32; 
+case 34: return 31; 
 break;
-case 35: return 37; 
+case 35: return 36; 
 break;
-case 36: return 38; 
+case 36: return 37; 
 break;
-case 37: return 22; 
+case 37: return 20; 
 break;
 case 38: return 7; 
 break;
@@ -1471,7 +1493,7 @@ case 45:return 74
 break;
 case 46:return 75
 break;
-case 47:return 19
+case 47:return 22
 break;
 case 48:return 76
 break;
@@ -1489,7 +1511,7 @@ case 54:return 79
 break;
 case 55:return 80
 break;
-case 56: return 27; 
+case 56: return 26; 
 break;
 case 57: return 10; 
 break;

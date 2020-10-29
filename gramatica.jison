@@ -1,6 +1,9 @@
 /************************************************  Aqui los imports ************************************************/
 %{
-    let panic = false;
+    let panic = false,
+    count = 1,
+    errors = new Array();
+    token = new Array();
     const Nodo = require('./arbolNodo');
 %}
 
@@ -14,7 +17,9 @@
 [ \t\r\n\f]          /*skip*/
 
 //CADENA EN COMILLAS DOBLES
-[\"][^\\\"]*([\\][\\\"ntr][^\\\"]*)*[\"]         %{yytext.substr(1,yyleng-2);  return 'tk_cadena'; %}
+[\"][^\\\"]*([\\][\\\"ntr][^\\\"]*)*[\"]         %{yytext =yytext.substr(1,yyleng-2);  return 'tk_cadena'; %}
+
+
 
 //COMENTARIO MULTILINEA
 [/][*][^*]*[*]+([^/*][^*]*[*]+)*[/]             /* skip multiline */      //%{yytext.substr(1,yyleng-2);  return 'tk_comentario_multilinea'; %}
@@ -93,8 +98,8 @@
 /************************************************ Aqui va el lenguaje sintactico ***********************************************/
 %left  '||'
 %left  '&&'
-%left  '==', '!='
-%left  '>=', '<=', '<', '>'
+%left  '==' '!='
+%left  '>=' '<=' '<' '>'
 %left  '+' '-'
 %left  '*' '/'
 %left  '^'
@@ -116,8 +121,14 @@ CLASS: CLASS DEF    { $$ = new Nodo("CLASE","");
                     }
     |DEF            { $$ = new Nodo("CLASE","");
                         $$.addHijo($1);
-                    }
-    |error tk_puntoComa {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una clase");};
+                    }        
+    |CLASS error tk_puntoComa  {$$ = new Nodo("CLASE","");
+                        $$.addHijo($1);
+                        $$.addHijo($2);
+                        console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");}
+    |error tk_puntoComa  {$$ = new Nodo("CLASE","");
+                        $$.addHijo($1);
+                    console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una clase");};
 
 
 DEF: tk_public A tk_id tk_lla METHODS tk_llc                { $$ = new Nodo($1,"public");
@@ -154,28 +165,22 @@ METHODS: METHODS DEFMET     { $$ = new Nodo("METODOS","");
     |VARIABLES1  tk_puntoComa              { $$ = new Nodo("METODOS","");
                                 $$.addHijo($1);
                             } 
-    |METHODS tk_boolean tk_id '=' BOOLEAN tk_puntoComa      { $$ = new Nodo("METODOS","");
-                                                                $$.addHijo($1);
-                                                                $$.addHijo(new Nodo($2,"boolean"));
-                                                                $$.addHijo(new Nodo($3,"id"));
-                                                                $$.addHijo(new Nodo($4,"="));
-                                                                $$.addHijo($5);
-                                                            }
-    |tk_boolean tk_id '=' BOOLEAN tk_puntoComa              { $$ = new Nodo("METODOS","");
-                                                                $$.addHijo(new Nodo($1,"boolean"));
-                                                                $$.addHijo(new Nodo($2,"id"));
-                                                                $$.addHijo(new Nodo($3,"="));
-                                                                $$.addHijo($4);
-                                                            }
-    |METHODS PRINTSENTENCE tk_puntoComa     { $$ = new Nodo("METODOS","");
+    |METHODS BOOLEAN        { $$ = new Nodo("METODOS","");
+                                $$.addHijo($1);
+                                $$.addHijo($2);
+                            }
+    |BOOLEAN                { $$ = new Nodo("METODOS","");
+                                $$.addHijo($1);
+                            }
+    |METHODS PRINTSENTENCE      { $$ = new Nodo("METODOS","");
                                                 $$.addHijo($1);
                                                 $$.addHijo($2);
                                             }
-    |PRINTSENTENCE tk_puntoComa             { $$ = new Nodo("METODOS","");
+    |PRINTSENTENCE              { $$ = new Nodo("METODOS","");
                                                 $$.addHijo($1);
-                                            }
-    |error tk_puntoComa {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo");};
-
+                                            }            
+    |METHODS error tk_puntoComa  {console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");}          
+    |error tk_puntoComa {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba un metodo o variable");};
 
 
 VARIABLES1: VARIABLES1 tk_coma tk_id      { $$ = new Nodo("VARIAB","");
@@ -247,7 +252,7 @@ VARIABLES1: VARIABLES1 tk_coma tk_id      { $$ = new Nodo("VARIAB","");
                                     };
 
 
-DEFMET: tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_lla SENTENCES tk_llc     { $$ = new Nodo($1,"public");
+DEFMET: tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_lla SENTENCES tk_llc     { $$ = new Nodo("public","1");
                                                                                     $$.addHijo($2);
                                                                                     $$.addHijo(new Nodo($3,"id"));
                                                                                     $$.addHijo(new Nodo($4,"("));
@@ -257,25 +262,25 @@ DEFMET: tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_lla SENTENCES tk_llc     
                                                                                     $$.addHijo($8);
                                                                                     $$.addHijo(new Nodo($9,"}"));
                                                                                 }     
-    |tk_public TYPE tk_id tk_pa  tk_pc tk_lla SENTENCES tk_llc                   { $$ = new Nodo($1,"public");
+    |tk_public TYPE tk_id tk_pa  tk_pc tk_lla SENTENCES tk_llc                   { $$ = new Nodo("public","2");
                                                                                     $$.addHijo($2);
                                                                                     $$.addHijo(new Nodo($3,"id"));
                                                                                     $$.addHijo(new Nodo($6,"{"));
                                                                                     $$.addHijo($7);
                                                                                     $$.addHijo(new Nodo($8,"}"));
                                                                                 } 
-    |tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_lla  tk_llc                 { $$ = new Nodo($1,"public");
+    |tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_lla  tk_llc                 { $$ = new Nodo("public","3");
                                                                                     $$.addHijo($2);
                                                                                     $$.addHijo(new Nodo($3,"id"));
                                                                                     $$.addHijo(new Nodo($4,"("));
                                                                                     $$.addHijo($5);
                                                                                     $$.addHijo(new Nodo($6,")"));
                                                                                 }       
-    |tk_public TYPE tk_id tk_pa tk_pc tk_lla tk_llc                             { $$ = new Nodo($1,"public");
+    |tk_public TYPE tk_id tk_pa tk_pc tk_lla tk_llc                             { $$ = new Nodo("public","4");
                                                                                     $$.addHijo($2);
                                                                                     $$.addHijo(new Nodo($3,"id"));
                                                                                 }          
-    |tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_puntoComa                   { $$ = new Nodo($1,"public");
+    |tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_puntoComa                   { $$ = new Nodo("public","5");
                                                                                     $$.addHijo($2);
                                                                                     $$.addHijo(new Nodo($3,"id"));
                                                                                     $$.addHijo(new Nodo($4,"("));
@@ -283,12 +288,19 @@ DEFMET: tk_public TYPE tk_id tk_pa PARAMETERS tk_pc tk_lla SENTENCES tk_llc     
                                                                                     $$.addHijo(new Nodo($6,")"));
                                                                                     $$.addHijo(new Nodo($7,";"));
                                                                                 }    
-    |tk_public TYPE tk_id tk_pa tk_pc tk_puntoComa                              { $$ = new Nodo($1,"public");
+    |tk_public TYPE tk_id tk_pa tk_pc tk_puntoComa                              { $$ = new Nodo("public","6");
                                                                                     $$.addHijo($2);
                                                                                     $$.addHijo(new Nodo($3,"id"));
                                                                                     $$.addHijo(new Nodo($6,";"));
                                                                                 }
-    |tk_public tk_static tk_void tk_main tk_pa tk_string tk_ca tk_cc tk_args tk_pc tk_lla SENTENCES tk_llc   { $$ = new Nodo($4,"main");
+    |tk_public tk_static tk_void tk_main tk_pa tk_string tk_ca tk_cc tk_args tk_pc tk_lla SENTENCES tk_llc   { $$ = new Nodo("public","7");
+                                                                                                                $$.addHijo(new Nodo($4,"main"));
+                                                                                                                $$.addHijo(new Nodo($11,"{"));
+                                                                                                                $$.addHijo($12);
+                                                                                                                $$.addHijo(new Nodo($13,"}"));
+                                                                                                            }
+    |tk_public tk_static tk_void tk_main tk_pa tk_string tk_ca tk_cc tk_args tk_pc tk_lla  tk_llc   { $$ = new Nodo("public","8");
+                                                                                                                $$.addHijo(new Nodo($4,"main"));
                                                                                                                 $$.addHijo(new Nodo($11,"{"));
                                                                                                                 $$.addHijo(new Nodo($12,"}"));
                                                                                                             };
@@ -339,33 +351,34 @@ DEFPA: tk_int tk_id         { $$ = new Nodo($1,"int");
 
 
 
+
 //INICIA LA SUPER PRODUCCION
-SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","");
+SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","1");
                                                 $$.addHijo($1);
                                                 $$.addHijo($2);
                                                 $$.addHijo(new Nodo($3,"{"));
                                                 $$.addHijo(new Nodo($4,"}"));
                                             }
-    |DEFSENT tk_lla tk_llc                  { $$ = new Nodo("SENTENCIAS","");
+    |DEFSENT tk_lla tk_llc                  { $$ = new Nodo("SENTENCIAS","2");
                                                 $$.addHijo($1);
                                                 $$.addHijo(new Nodo($2,"{"));
                                                 $$.addHijo(new Nodo($3,"}"));
                                             }
-    |SENTENCES DEFSENT tk_lla SENTENCES tk_llc  { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES DEFSENT tk_lla SENTENCES tk_llc  { $$ = new Nodo("SENTENCIAS","3");
                                                     $$.addHijo($1);
                                                     $$.addHijo($2);
                                                     $$.addHijo(new Nodo($3,"{"));
                                                     $$.addHijo($4);
                                                     $$.addHijo(new Nodo($5,"}"));
                                                 }
-    |DEFSENT tk_lla SENTENCES tk_llc            { $$ = new Nodo("SENTENCIAS","");
+    |DEFSENT tk_lla SENTENCES tk_llc            { $$ = new Nodo("SENTENCIAS","4");
                                                     $$.addHijo($1);
                                                     $$.addHijo(new Nodo($2,"{"));
                                                     $$.addHijo($3);
                                                     $$.addHijo(new Nodo($4,"}"));
                                                 }            
     //AQUI INICIA EL DO WHILE
-    |SENTENCES tk_do tk_lla SENTENCES tk_llc tk_while tk_pa EXPRE tk_pc tk_puntoComa  { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES tk_do tk_lla SENTENCES tk_llc tk_while tk_pa EXPRE tk_pc tk_puntoComa  { $$ = new Nodo("SENTENCIAS","5");
                                                                                         $$.addHijo(new Nodo($1,"doWhile"));
                                                                                         $$.addHijo($2);
                                                                                         $$.addHijo(new Nodo($3,"{"));
@@ -375,7 +388,7 @@ SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","");
                                                                                         $$.addHijo($8);
                                                                                         $$.addHijo(new Nodo($9,")"));
                                                                                     }
-    |tk_do tk_lla SENTENCES tk_llc  tk_while tk_pa EXPRE tk_pc tk_puntoComa           { $$ = new Nodo("SENTENCIAS","");
+    |tk_do tk_lla SENTENCES tk_llc  tk_while tk_pa EXPRE tk_pc tk_puntoComa           { $$ = new Nodo("SENTENCIAS","6");
                                                                                         $$.addHijo(new Nodo($1,"doWhile"));
                                                                                         $$.addHijo(new Nodo($2,"{"));
                                                                                         $$.addHijo($3);
@@ -384,7 +397,7 @@ SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","");
                                                                                         $$.addHijo($7);
                                                                                         $$.addHijo(new Nodo($8,")"));
                                                                                     }
-    |SENTENCES tk_do tk_lla  tk_llc tk_while tk_pa EXPRE tk_pc tk_puntoComa   { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES tk_do tk_lla  tk_llc tk_while tk_pa EXPRE tk_pc tk_puntoComa   { $$ = new Nodo("SENTENCIAS","7");
                                                                                 $$.addHijo(new Nodo($1,"doWhile"));
                                                                                 $$.addHijo($2);
                                                                                 $$.addHijo(new Nodo($3,"{"));
@@ -393,7 +406,7 @@ SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","");
                                                                                 $$.addHijo($7);
                                                                                 $$.addHijo(new Nodo($8,")"));
                                                                             }
-    |tk_do tk_lla  tk_llc  tk_while tk_pa EXPRE tk_pc tk_puntoComa            { $$ = new Nodo("SENTENCIAS","");
+    |tk_do tk_lla  tk_llc  tk_while tk_pa EXPRE tk_pc tk_puntoComa            { $$ = new Nodo("SENTENCIAS","8");
                                                                                 $$.addHijo(new Nodo($1,"doWhile"));
                                                                                 $$.addHijo(new Nodo($2,"{"));
                                                                                 $$.addHijo(new Nodo($3,"}"));
@@ -403,51 +416,43 @@ SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","");
                                                                             }
     //AQUI FINALIZA EL DO WHILE
     //AQUI INICIAN LOS RETURNS, PRINT Y EL RESTO
-    |SENTENCES VARIABLES tk_puntoComa   { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES VARIABLES tk_puntoComa   { $$ = new Nodo("SENTENCIAS","9");
                                             $$.addHijo($1);
                                             $$.addHijo($2);
-                                            $$.addHijo(new Nodo($3,";"));
                                         }  
-    |VARIABLES tk_puntoComa             { $$ = new Nodo("SENTENCIAS","");
+    |VARIABLES tk_puntoComa             { $$ = new Nodo("SENTENCIAS","10");
                                             $$.addHijo($1);
-                                            $$.addHijo(new Nodo($2,";"));
                                         }
-    |SENTENCES RETURNS tk_puntoComa     { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES RETURNS tk_puntoComa     { $$ = new Nodo("SENTENCIAS","11");
                                             $$.addHijo($1);
                                             $$.addHijo($2);
-                                            $$.addHijo(new Nodo($3,";"));
                                         }
-    |RETURNS tk_puntoComa               { $$ = new Nodo("SENTENCIAS","");
+    |RETURNS tk_puntoComa               { $$ = new Nodo("SENTENCIAS","12");
                                             $$.addHijo($1);
-                                            $$.addHijo(new Nodo($2,";"));
                                         }
-    |SENTENCES tk_boolean tk_id '=' BOOLEAN tk_puntoComa    { $$ = new Nodo("SENTENCIAS","");
-                                                                $$.addHijo($1);
-                                                                $$.addHijo(new Nodo($2,"boolean"));
-                                                                $$.addHijo(new Nodo($3,"id"));
-                                                                $$.addHijo(new Nodo($4,"="));
-                                                                $$.addHijo($5);
-                                                            }
-    |tk_boolean tk_id '=' BOOLEAN tk_puntoComa              { $$ = new Nodo("SENTENCIAS","");
-                                                                $$.addHijo(new Nodo($1,"boolean"));
-                                                                $$.addHijo(new Nodo($2,"id"));
-                                                                $$.addHijo(new Nodo($3,"="));
-                                                                $$.addHijo($4);
-                                                            }
-    |SENTENCES PRINTSENTENCE tk_puntoComa   { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES BOOLEAN      { $$ = new Nodo("SENTENCIAS","13");
+                                $$.addHijo($1);
+                                $$.addHijo($2);
+                            }
+    |BOOLEAN                { $$ = new Nodo("SENTENCIAS","14");
+                                $$.addHijo($1);
+                            }
+    |SENTENCES PRINTSENTENCE    { $$ = new Nodo("SENTENCIAS","15");
                                                 $$.addHijo($1);
                                                 $$.addHijo($2);
                                             }
-    |PRINTSENTENCE tk_puntoComa             { $$ = new Nodo("SENTENCIAS","");
+    |PRINTSENTENCE              { $$ = new Nodo("SENTENCIAS","16");
                                                 $$.addHijo($1);
                                             }   
-    |SENTENCES EXPRE  tk_puntoComa  { $$ = new Nodo("SENTENCIAS","");
+    |SENTENCES EXPRE  tk_puntoComa  { $$ = new Nodo("SENTENCIAS","17");
                                         $$.addHijo($1);
                                         $$.addHijo($2);
                                     }
-    |EXPRE  tk_puntoComa            { $$ = new Nodo("SENTENCIAS","");
+    |EXPRE  tk_puntoComa            { $$ = new Nodo("SENTENCIAS","18");
                                         $$.addHijo($1);
-                                    };
+                                    }       
+    |SENTENCES error tk_puntoComa  {console.log("Error sintactico - linea: "+(yylineno - 1)+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");}          
+    |error tk_puntoComa {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una sentencia");};
 
 
 
@@ -457,7 +462,7 @@ SENTENCES: SENTENCES DEFSENT tk_lla tk_llc  { $$ = new Nodo("SENTENCIAS","");
 
 
 
-DEFSENT: tk_for tk_pa CONDITION tk_puntoComa EXPRE tk_puntoComa DEC tk_pc   { $$ = new Nodo("for","");
+DEFSENT: tk_for tk_pa CONDITION tk_puntoComa EXPRE tk_puntoComa DEC tk_pc   { $$ = new Nodo("for","1");
                                                                                 $$.addHijo(new Nodo($2,"("));
                                                                                 $$.addHijo($3);
                                                                                 $$.addHijo(new Nodo($4,";"));
@@ -466,56 +471,62 @@ DEFSENT: tk_for tk_pa CONDITION tk_puntoComa EXPRE tk_puntoComa DEC tk_pc   { $$
                                                                                 $$.addHijo($7);
                                                                                 $$.addHijo(new Nodo($8,")"));
                                                                             }
-    |tk_while tk_pa EXPRE tk_pc                                             { $$ = new Nodo("while","");
+    |tk_while tk_pa EXPRE tk_pc                                             { $$ = new Nodo("while","2");
                                                                                 $$.addHijo(new Nodo($2,"("));
                                                                                 $$.addHijo($3);
                                                                                 $$.addHijo(new Nodo($4,")"));
                                                                             }
-    |tk_if tk_pa EXPRE tk_pc                                                { $$ = new Nodo("if","");
+    |tk_if tk_pa EXPRE tk_pc                                                { $$ = new Nodo("if","3");
                                                                                 $$.addHijo(new Nodo($2,"("));
                                                                                 $$.addHijo($3);
                                                                                 $$.addHijo(new Nodo($4,")"));
                                                                             }
-    |tk_else tk_if tk_pa EXPRE tk_pc                                        { $$ = new Nodo("elif","");
+    |tk_else tk_if tk_pa EXPRE tk_pc                                        { $$ = new Nodo("elif","4");
                                                                                 $$.addHijo(new Nodo($3,"("));
                                                                                 $$.addHijo($4);
                                                                                 $$.addHijo(new Nodo($5,")"));
                                                                             }
-    |tk_else                                                                { $$ = new Nodo("else","");
+    |tk_else                                                                { $$ = new Nodo("else","5");
                                                                                 $$.addHijo(new Nodo($1,"else"));
                                                                             };
 
 
-PRINTSENTENCE: tk_system '.' tk_out '.' tk_print tk_pa EXP tk_pc    { $$ = new Nodo("print","");
+PRINTSENTENCE: tk_system '.' tk_out '.' tk_print tk_pa EXP tk_pc tk_puntoComa   { $$ = new Nodo("PRINT","");
                                                                         $$.addHijo(new Nodo($6,"("));
                                                                         $$.addHijo($7);
                                                                         $$.addHijo(new Nodo($8,")"));
                                                                     }
-    |tk_system '.' tk_out '.' tk_println tk_pa EXP tk_pc            { $$ = new Nodo("println","");
+    |tk_system '.' tk_out '.' tk_println tk_pa EXP tk_pc  tk_puntoComa          { $$ = new Nodo("PRINT","");
                                                                         $$.addHijo(new Nodo($6,"("));
                                                                         $$.addHijo($7);
                                                                         $$.addHijo(new Nodo($8,")"));
                                                                     };
 
 
-RETURNS: tk_break   { $$ = new Nodo("RETU","");
+RETURNS: tk_break   { $$ = new Nodo("RET","1");
                         $$.addHijo(new Nodo($1,"break"));
                     }
-    |tk_continue    { $$ = new Nodo("RET","");
+    |tk_continue    { $$ = new Nodo("RET","2");
                         $$.addHijo(new Nodo($1,"continue"));
                     }
-    |tk_return EXP  { $$ = new Nodo("RET","");
+    |tk_return EXP  { $$ = new Nodo("RET","3");
                         $$.addHijo(new Nodo($1,"return"));
                         $$.addHijo($2);
                     };
 
 
-BOOLEAN: tk_true    { $$ = new Nodo("BOOLE","");
-                        $$.addHijo(new Nodo($1,"true"));
-                    }
-    |tk_false       { $$ = new Nodo("BOOLE","");
-                        $$.addHijo(new Nodo($1,"false"));
-                    };
+BOOLEAN: tk_boolean tk_id '=' tk_true tk_puntoComa  { $$ = new Nodo("BOOLE","");
+                                                        $$.addHijo(new Nodo($1,"boolean"));
+                                                        $$.addHijo(new Nodo($2,"id"));
+                                                        $$.addHijo(new Nodo($3,"="));
+                                                        $$.addHijo(new Nodo($4,"true"));
+                                                    }
+    |tk_boolean tk_id '=' tk_false tk_puntoComa     { $$ = new Nodo("BOOLE","");
+                                                        $$.addHijo(new Nodo($1,"boolean"));
+                                                        $$.addHijo(new Nodo($2,"id"));
+                                                        $$.addHijo(new Nodo($3,"="));
+                                                        $$.addHijo(new Nodo($4,"false"));
+                                                    };
 
 
 DEC: tk_id '++' { $$ = new Nodo("DEC",""); 
@@ -527,6 +538,7 @@ DEC: tk_id '++' { $$ = new Nodo("DEC","");
                     $$.addHijo(new Nodo("--","sustraccion"));
                 }
     |error tk_puntoComa  {console.log("Error sintactico - linea: "+this._$.first_line+" - columna: "+this._$.first_column+" - Se esperaba una declaracion");};
+
 
 
 CONDITION: tk_int tk_id                 { $$ = new Nodo("COND","");
@@ -715,21 +727,35 @@ EXP: EXP '&&' DEFEXP    { $$ = new Nodo("EXP","");
                     $$.addHijo(new Nodo($2,"--"));
                 }
     |tk_pa EXP tk_pc    { $$ = new Nodo("EXP","");
+                            $$.addHijo(new Nodo($1,"("));
                             $$.addHijo($2); 
+                            $$.addHijo(new Nodo($3,")"));
                         }
-    |tk_numero  { $$ = new Nodo($1,"numero"); }
-    |tk_id      { $$ = new Nodo($1,"id"); } 
-    |tk_cadena  { $$ = new Nodo($1,"cadena"); }
+    |tk_numero      { $$ = new Nodo("EXP","");
+                        $$.addHijo(new Nodo($1,"numero"));
+                    }
+    |tk_id          { $$ = new Nodo("EXP","");
+                        $$.addHijo(new Nodo($1,"id"));
+                    } 
+    |tk_cadena      { $$ = new Nodo("EXP","");
+                        $$.addHijo(new Nodo($1,"cadena"));
+                    }
     |;
 
-DEFEXP: tk_numero   { $$ = new Nodo($1,"numero"); }
-    |tk_id          { $$ = new Nodo($1,"id"); } 
-    |tk_cadena      { $$ = new Nodo($1,"cadena"); }
+DEFEXP: tk_numero   { $$ = new Nodo("EXP","");
+                        $$.addHijo(new Nodo($1,"numero"));
+                    }
+    |tk_id          { $$ = new Nodo("EXP","");
+                        $$.addHijo(new Nodo($1,"id"));
+                    }  
+    |tk_cadena      { $$ = new Nodo("EXP","");
+                        $$.addHijo(new Nodo($1,"cadena"));
+                    }
     |tk_pa EXP tk_pc    { $$ = new Nodo("EXP","");
+                            $$.addHijo(new Nodo($1,"("));
                             $$.addHijo($2); 
+                            $$.addHijo(new Nodo($3,")"));
                         };
-
-
 
 
 
@@ -749,11 +775,23 @@ ERROR: error {console.log("Error sintactico - linea: "+this._$.first_line+" - co
 
 ERROR: error {
    if($1!=';' && !panic){
-			
-			console.log('Este es un error sintactico: ' + + '. En la linea: '+ this._$.first_line + ', columna: '+this._$.first_column);
+			let row = this._$.first_line;
+			let column = this._$.first_column + 1;
+			let newError = "<td><center>" + count.toString() + "</center></td>\n" +
+                "<td><center>Sintáctico</center></td>\n" +
+                "<td><center>" + row + "</center></td>\n" +
+                "<td><center>" + column + "</center></td>\n" +
+                "<td><center>Se esperaba el inicio de una instrucción valida pero se obtuvo \"" + $1 + "\" </center></td>\n" +
+                "</tr>\n" +
+                "</center>\n";
+			count+=1;
+			errors.push(newError);
+			console.log('Este es un error sintactico: ' + $1 + '. En la linea: '+ (yylineno + 1) + ', columna: '+this._$.first_column);
 			panic = true;
-    }else if($1==';'){
-			panic = false;
+        }
+	else if($1==';'){
+		panic = false;
+	}
 	}
 };
 */
