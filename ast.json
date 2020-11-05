@@ -1,1 +1,1734 @@
-true
+{
+  "id": 1,
+  "valor": "RAIZ",
+  "tipo": "",
+  "hijos": [
+    {
+      "id": 2,
+      "valor": "CLASE",
+      "tipo": "",
+      "hijos": [
+        {
+          "id": 3,
+          "valor": "public",
+          "tipo": "public",
+          "hijos": [
+            {
+              "id": 4,
+              "valor": "class",
+              "tipo": "class",
+              "hijos": []
+            },
+            {
+              "id": 5,
+              "valor": "Myclase",
+              "tipo": "id",
+              "hijos": []
+            },
+            {
+              "id": 6,
+              "valor": "{",
+              "tipo": "{",
+              "hijos": []
+            },
+            {
+              "id": 7,
+              "valor": "METODOS",
+              "tipo": "",
+              "hijos": [
+                {
+                  "id": 8,
+                  "valor": "METODOS",
+                  "tipo": "",
+                  "hijos": [
+                    {
+                      "id": 9,
+                      "valor": "METODOS",
+                      "tipo": "",
+                      "hijos": [
+                        {
+                          "id": 10,
+                          "valor": "METODOS",
+                          "tipo": "",
+                          "hijos": [
+                            {
+                              "id": 11,
+                              "valor": "METODOS",
+                              "tipo": "",
+                              "hijos": [
+                                {
+                                  "id": 12,
+                                  "valor": "METODOS",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 13,
+                                      "valor": "METODOS",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 14,
+                                          "valor": "VARIAB",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 15,
+                                              "valor": "VARIAB",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 16,
+                                                  "valor": "VARIAB",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 17,
+                                                      "valor": "String",
+                                                      "tipo": "string",
+                                                      "hijos": []
+                                                    },
+                                                    {
+                                                      "id": 18,
+                                                      "valor": "variable",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 19,
+                                                  "valor": ",",
+                                                  "tipo": ",",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 20,
+                                                  "valor": "variable1",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 21,
+                                              "valor": ",",
+                                              "tipo": ",",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 22,
+                                              "valor": "variable2",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 23,
+                                      "valor": "VARIAB",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 24,
+                                          "valor": "int",
+                                          "tipo": "int",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 25,
+                                          "valor": "constante",
+                                          "tipo": "id",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 26,
+                                          "valor": "=",
+                                          "tipo": "=",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 27,
+                                          "valor": "100",
+                                          "tipo": "numero",
+                                          "hijos": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 28,
+                                  "valor": "public",
+                                  "tipo": "2",
+                                  "hijos": [
+                                    {
+                                      "id": 29,
+                                      "valor": "void",
+                                      "tipo": "void",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 30,
+                                      "valor": "MyMetodo",
+                                      "tipo": "id",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 31,
+                                      "valor": "{",
+                                      "tipo": "{",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 32,
+                                      "valor": "SENTENCIAS",
+                                      "tipo": "15",
+                                      "hijos": [
+                                        {
+                                          "id": 33,
+                                          "valor": "SENTENCIAS",
+                                          "tipo": "15",
+                                          "hijos": [
+                                            {
+                                              "id": 34,
+                                              "valor": "SENTENCIAS",
+                                              "tipo": "9",
+                                              "hijos": [
+                                                {
+                                                  "id": 35,
+                                                  "valor": "SENTENCIAS",
+                                                  "tipo": "9",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 36,
+                                                      "valor": "SENTENCIAS",
+                                                      "tipo": "9",
+                                                      "hijos": [
+                                                        {
+                                                          "id": 37,
+                                                          "valor": "SENTENCIAS",
+                                                          "tipo": "9",
+                                                          "hijos": [
+                                                            {
+                                                              "id": 38,
+                                                              "valor": "SENTENCIAS",
+                                                              "tipo": "10",
+                                                              "hijos": [
+                                                                {
+                                                                  "id": 39,
+                                                                  "valor": "VARIAB",
+                                                                  "tipo": "",
+                                                                  "hijos": [
+                                                                    {
+                                                                      "id": 40,
+                                                                      "valor": "String",
+                                                                      "tipo": "string",
+                                                                      "hijos": []
+                                                                    },
+                                                                    {
+                                                                      "id": 41,
+                                                                      "valor": "nombre",
+                                                                      "tipo": "id",
+                                                                      "hijos": []
+                                                                    },
+                                                                    {
+                                                                      "id": 42,
+                                                                      "valor": "=",
+                                                                      "tipo": "=",
+                                                                      "hijos": []
+                                                                    },
+                                                                    {
+                                                                      "id": 43,
+                                                                      "valor": "myMetodo",
+                                                                      "tipo": "cadena",
+                                                                      "hijos": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "id": 44,
+                                                              "valor": "VARIAB",
+                                                              "tipo": "",
+                                                              "hijos": [
+                                                                {
+                                                                  "id": 45,
+                                                                  "valor": "VARIAB",
+                                                                  "tipo": "",
+                                                                  "hijos": [
+                                                                    {
+                                                                      "id": 46,
+                                                                      "valor": "int",
+                                                                      "tipo": "int",
+                                                                      "hijos": []
+                                                                    },
+                                                                    {
+                                                                      "id": 47,
+                                                                      "valor": "x",
+                                                                      "tipo": "id",
+                                                                      "hijos": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "id": 48,
+                                                                  "valor": ",",
+                                                                  "tipo": ",",
+                                                                  "hijos": []
+                                                                },
+                                                                {
+                                                                  "id": 49,
+                                                                  "valor": "y",
+                                                                  "tipo": "id",
+                                                                  "hijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "id": 50,
+                                                          "valor": "VARIAB",
+                                                          "tipo": "",
+                                                          "hijos": [
+                                                            {
+                                                              "id": 51,
+                                                              "valor": "x",
+                                                              "tipo": "id",
+                                                              "hijos": []
+                                                            },
+                                                            {
+                                                              "id": 52,
+                                                              "valor": "=",
+                                                              "tipo": "=",
+                                                              "hijos": []
+                                                            },
+                                                            {
+                                                              "id": 53,
+                                                              "valor": "10",
+                                                              "tipo": "numero",
+                                                              "hijos": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "id": 54,
+                                                      "valor": "VARIAB",
+                                                      "tipo": "",
+                                                      "hijos": [
+                                                        {
+                                                          "id": 55,
+                                                          "valor": "y",
+                                                          "tipo": "id",
+                                                          "hijos": []
+                                                        },
+                                                        {
+                                                          "id": 56,
+                                                          "valor": "=",
+                                                          "tipo": "=",
+                                                          "hijos": []
+                                                        },
+                                                        {
+                                                          "id": 57,
+                                                          "valor": "11",
+                                                          "tipo": "numero",
+                                                          "hijos": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 58,
+                                                  "valor": "VARIAB",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 59,
+                                                      "valor": "int",
+                                                      "tipo": "int",
+                                                      "hijos": []
+                                                    },
+                                                    {
+                                                      "id": 60,
+                                                      "valor": "variable",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    },
+                                                    {
+                                                      "id": 61,
+                                                      "valor": "=",
+                                                      "tipo": "=",
+                                                      "hijos": []
+                                                    },
+                                                    {
+                                                      "id": 62,
+                                                      "valor": "3",
+                                                      "tipo": "numero",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 63,
+                                              "valor": "PRINT",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 64,
+                                                  "valor": "(",
+                                                  "tipo": "(",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 65,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 66,
+                                                      "valor": "myMetodo",
+                                                      "tipo": "cadena",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 67,
+                                                  "valor": ")",
+                                                  "tipo": ")",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 68,
+                                          "valor": "PRINT",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 69,
+                                              "valor": "(",
+                                              "tipo": "(",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 70,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 71,
+                                                  "valor": "x",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 72,
+                                              "valor": ")",
+                                              "tipo": ")",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 73,
+                                      "valor": "}",
+                                      "tipo": "}",
+                                      "hijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": 74,
+                              "valor": "public",
+                              "tipo": "1",
+                              "hijos": [
+                                {
+                                  "id": 75,
+                                  "valor": "void",
+                                  "tipo": "void",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 76,
+                                  "valor": "MyMetodo2",
+                                  "tipo": "id",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 77,
+                                  "valor": "(",
+                                  "tipo": "(",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 78,
+                                  "valor": "PARAMET",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 79,
+                                      "valor": "int",
+                                      "tipo": "int",
+                                      "hijos": [
+                                        {
+                                          "id": 80,
+                                          "valor": "x",
+                                          "tipo": "id",
+                                          "hijos": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 81,
+                                  "valor": ")",
+                                  "tipo": ")",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 82,
+                                  "valor": "{",
+                                  "tipo": "{",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 83,
+                                  "valor": "SENTENCIAS",
+                                  "tipo": "3",
+                                  "hijos": [
+                                    {
+                                      "id": 84,
+                                      "valor": "SENTENCIAS",
+                                      "tipo": "15",
+                                      "hijos": [
+                                        {
+                                          "id": 85,
+                                          "valor": "SENTENCIAS",
+                                          "tipo": "10",
+                                          "hijos": [
+                                            {
+                                              "id": 86,
+                                              "valor": "VARIAB",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 87,
+                                                  "valor": "int",
+                                                  "tipo": "int",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 88,
+                                                  "valor": "valor",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 89,
+                                                  "valor": "=",
+                                                  "tipo": "=",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 90,
+                                                  "valor": "x",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 91,
+                                          "valor": "PRINT",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 92,
+                                              "valor": "(",
+                                              "tipo": "(",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 93,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 94,
+                                                  "valor": "x",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 95,
+                                              "valor": ")",
+                                              "tipo": ")",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 96,
+                                      "valor": "for",
+                                      "tipo": "1",
+                                      "hijos": [
+                                        {
+                                          "id": 97,
+                                          "valor": "(",
+                                          "tipo": "(",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 98,
+                                          "valor": "COND",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 99,
+                                              "valor": "int",
+                                              "tipo": "int",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 100,
+                                              "valor": "f",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 101,
+                                          "valor": ";",
+                                          "tipo": ";",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 102,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 103,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 104,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 105,
+                                                      "valor": "x",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 106,
+                                                  "valor": "<=",
+                                                  "tipo": "<=",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 107,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 108,
+                                                      "valor": "f",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 109,
+                                          "valor": ";",
+                                          "tipo": ";",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 110,
+                                          "valor": "DEC",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 111,
+                                              "valor": "f",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 112,
+                                              "valor": "++",
+                                              "tipo": "adicion",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 113,
+                                          "valor": ")",
+                                          "tipo": ")",
+                                          "hijos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 114,
+                                      "valor": "{",
+                                      "tipo": "{",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 115,
+                                      "valor": "SENTENCIAS",
+                                      "tipo": "16",
+                                      "hijos": [
+                                        {
+                                          "id": 116,
+                                          "valor": "PRINT",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 117,
+                                              "valor": "(",
+                                              "tipo": "(",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 118,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 119,
+                                                  "valor": "HOla",
+                                                  "tipo": "cadena",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 120,
+                                              "valor": ")",
+                                              "tipo": ")",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 121,
+                                      "valor": "}",
+                                      "tipo": "}",
+                                      "hijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 122,
+                                  "valor": "}",
+                                  "tipo": "}",
+                                  "hijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": 123,
+                          "valor": "public",
+                          "tipo": "2",
+                          "hijos": [
+                            {
+                              "id": 124,
+                              "valor": "void",
+                              "tipo": "void",
+                              "hijos": []
+                            },
+                            {
+                              "id": 125,
+                              "valor": "Contador",
+                              "tipo": "id",
+                              "hijos": []
+                            },
+                            {
+                              "id": 126,
+                              "valor": "{",
+                              "tipo": "{",
+                              "hijos": []
+                            },
+                            {
+                              "id": 127,
+                              "valor": "SENTENCIAS",
+                              "tipo": "15",
+                              "hijos": [
+                                {
+                                  "id": 128,
+                                  "valor": "SENTENCIAS",
+                                  "tipo": "6",
+                                  "hijos": [
+                                    {
+                                      "id": 129,
+                                      "valor": "do",
+                                      "tipo": "doWhile",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 130,
+                                      "valor": "{",
+                                      "tipo": "{",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 131,
+                                      "valor": "SENTENCIAS",
+                                      "tipo": "17",
+                                      "hijos": [
+                                        {
+                                          "id": 132,
+                                          "valor": "SENTENCIAS",
+                                          "tipo": "16",
+                                          "hijos": [
+                                            {
+                                              "id": 133,
+                                              "valor": "PRINT",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 134,
+                                                  "valor": "(",
+                                                  "tipo": "(",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 135,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 136,
+                                                      "valor": "EXP",
+                                                      "tipo": "",
+                                                      "hijos": [
+                                                        {
+                                                          "id": 137,
+                                                          "valor": "Contador",
+                                                          "tipo": "cadena",
+                                                          "hijos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "id": 138,
+                                                      "valor": "+",
+                                                      "tipo": "+",
+                                                      "hijos": []
+                                                    },
+                                                    {
+                                                      "id": 139,
+                                                      "valor": "EXP",
+                                                      "tipo": "",
+                                                      "hijos": [
+                                                        {
+                                                          "id": 140,
+                                                          "valor": "(",
+                                                          "tipo": "(",
+                                                          "hijos": []
+                                                        },
+                                                        {
+                                                          "id": 141,
+                                                          "valor": "EXP",
+                                                          "tipo": "",
+                                                          "hijos": [
+                                                            {
+                                                              "id": 142,
+                                                              "valor": "EXP",
+                                                              "tipo": "",
+                                                              "hijos": [
+                                                                {
+                                                                  "id": 143,
+                                                                  "valor": "contador",
+                                                                  "tipo": "id",
+                                                                  "hijos": []
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "id": 144,
+                                                              "valor": "+",
+                                                              "tipo": "+",
+                                                              "hijos": []
+                                                            },
+                                                            {
+                                                              "id": 145,
+                                                              "valor": "EXP",
+                                                              "tipo": "",
+                                                              "hijos": [
+                                                                {
+                                                                  "id": 146,
+                                                                  "valor": "1",
+                                                                  "tipo": "numero",
+                                                                  "hijos": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "id": 147,
+                                                          "valor": ")",
+                                                          "tipo": ")",
+                                                          "hijos": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 148,
+                                                  "valor": ")",
+                                                  "tipo": ")",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 149,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 150,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 151,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 152,
+                                                      "valor": "contador",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 153,
+                                                  "valor": "++",
+                                                  "tipo": "++",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 154,
+                                      "valor": "}",
+                                      "tipo": "}",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 155,
+                                      "valor": "(",
+                                      "tipo": "(",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 156,
+                                      "valor": "EXP",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 157,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 158,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 159,
+                                                  "valor": "contador",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 160,
+                                              "valor": "<",
+                                              "tipo": "<",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 161,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 162,
+                                                  "valor": "10",
+                                                  "tipo": "numero",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 163,
+                                      "valor": ")",
+                                      "tipo": ")",
+                                      "hijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 164,
+                                  "valor": "PRINT",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 165,
+                                      "valor": "(",
+                                      "tipo": "(",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 166,
+                                      "valor": "EXP",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 167,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 168,
+                                              "valor": "contador",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 169,
+                                          "valor": "+",
+                                          "tipo": "+",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 170,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 171,
+                                              "valor": "va aumentando",
+                                              "tipo": "cadena",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 172,
+                                      "valor": ")",
+                                      "tipo": ")",
+                                      "hijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": 173,
+                              "valor": "}",
+                              "tipo": "}",
+                              "hijos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": 174,
+                      "valor": "public",
+                      "tipo": "7",
+                      "hijos": [
+                        {
+                          "id": 175,
+                          "valor": "main",
+                          "tipo": "main",
+                          "hijos": []
+                        },
+                        {
+                          "id": 176,
+                          "valor": "{",
+                          "tipo": "{",
+                          "hijos": []
+                        },
+                        {
+                          "id": 177,
+                          "valor": "SENTENCIAS",
+                          "tipo": "16",
+                          "hijos": [
+                            {
+                              "id": 178,
+                              "valor": "PRINT",
+                              "tipo": "",
+                              "hijos": [
+                                {
+                                  "id": 179,
+                                  "valor": "(",
+                                  "tipo": "(",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 180,
+                                  "valor": "EXP",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 181,
+                                      "valor": "ESTE ES EL MAIN",
+                                      "tipo": "cadena",
+                                      "hijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 182,
+                                  "valor": ")",
+                                  "tipo": ")",
+                                  "hijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": 183,
+                          "valor": "}",
+                          "tipo": "}",
+                          "hijos": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 184,
+                  "valor": "public",
+                  "tipo": "1",
+                  "hijos": [
+                    {
+                      "id": 185,
+                      "valor": "void",
+                      "tipo": "void",
+                      "hijos": []
+                    },
+                    {
+                      "id": 186,
+                      "valor": "testif",
+                      "tipo": "id",
+                      "hijos": []
+                    },
+                    {
+                      "id": 187,
+                      "valor": "(",
+                      "tipo": "(",
+                      "hijos": []
+                    },
+                    {
+                      "id": 188,
+                      "valor": "PARAMET",
+                      "tipo": "",
+                      "hijos": [
+                        {
+                          "id": 189,
+                          "valor": "String",
+                          "tipo": "string",
+                          "hijos": [
+                            {
+                              "id": 190,
+                              "valor": "valor",
+                              "tipo": "id",
+                              "hijos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": 191,
+                      "valor": ")",
+                      "tipo": ")",
+                      "hijos": []
+                    },
+                    {
+                      "id": 192,
+                      "valor": "{",
+                      "tipo": "{",
+                      "hijos": []
+                    },
+                    {
+                      "id": 193,
+                      "valor": "SENTENCIAS",
+                      "tipo": "3",
+                      "hijos": [
+                        {
+                          "id": 194,
+                          "valor": "SENTENCIAS",
+                          "tipo": "3",
+                          "hijos": [
+                            {
+                              "id": 195,
+                              "valor": "SENTENCIAS",
+                              "tipo": "3",
+                              "hijos": [
+                                {
+                                  "id": 196,
+                                  "valor": "SENTENCIAS",
+                                  "tipo": "10",
+                                  "hijos": [
+                                    {
+                                      "id": 197,
+                                      "valor": "VARIAB",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 198,
+                                          "valor": "int",
+                                          "tipo": "int",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 199,
+                                          "valor": "contador",
+                                          "tipo": "id",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 200,
+                                          "valor": "=",
+                                          "tipo": "=",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 201,
+                                          "valor": "valor",
+                                          "tipo": "id",
+                                          "hijos": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 202,
+                                  "valor": "if",
+                                  "tipo": "3",
+                                  "hijos": [
+                                    {
+                                      "id": 203,
+                                      "valor": "(",
+                                      "tipo": "(",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 204,
+                                      "valor": "EXP",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 205,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 206,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 207,
+                                                  "valor": "valor",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 208,
+                                              "valor": "==",
+                                              "tipo": "==",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 209,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 210,
+                                                  "valor": "10",
+                                                  "tipo": "numero",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 211,
+                                      "valor": ")",
+                                      "tipo": ")",
+                                      "hijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 212,
+                                  "valor": "{",
+                                  "tipo": "{",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 213,
+                                  "valor": "SENTENCIAS",
+                                  "tipo": "4",
+                                  "hijos": [
+                                    {
+                                      "id": 214,
+                                      "valor": "for",
+                                      "tipo": "1",
+                                      "hijos": [
+                                        {
+                                          "id": 215,
+                                          "valor": "(",
+                                          "tipo": "(",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 216,
+                                          "valor": "COND",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 217,
+                                              "valor": "int",
+                                              "tipo": "int",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 218,
+                                              "valor": "f",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 219,
+                                          "valor": ";",
+                                          "tipo": ";",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 220,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 221,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 222,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 223,
+                                                      "valor": "x",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "id": 224,
+                                                  "valor": "<=",
+                                                  "tipo": "<=",
+                                                  "hijos": []
+                                                },
+                                                {
+                                                  "id": 225,
+                                                  "valor": "EXP",
+                                                  "tipo": "",
+                                                  "hijos": [
+                                                    {
+                                                      "id": 226,
+                                                      "valor": "f",
+                                                      "tipo": "id",
+                                                      "hijos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 227,
+                                          "valor": ";",
+                                          "tipo": ";",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 228,
+                                          "valor": "DEC",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 229,
+                                              "valor": "f",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 230,
+                                              "valor": "++",
+                                              "tipo": "adicion",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 231,
+                                          "valor": ")",
+                                          "tipo": ")",
+                                          "hijos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 232,
+                                      "valor": "{",
+                                      "tipo": "{",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 233,
+                                      "valor": "SENTENCIAS",
+                                      "tipo": "16",
+                                      "hijos": [
+                                        {
+                                          "id": 234,
+                                          "valor": "PRINT",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 235,
+                                              "valor": "(",
+                                              "tipo": "(",
+                                              "hijos": []
+                                            },
+                                            {
+                                              "id": 236,
+                                              "valor": "EXP",
+                                              "tipo": "",
+                                              "hijos": [
+                                                {
+                                                  "id": 237,
+                                                  "valor": "f",
+                                                  "tipo": "id",
+                                                  "hijos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "id": 238,
+                                              "valor": ")",
+                                              "tipo": ")",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 239,
+                                      "valor": "}",
+                                      "tipo": "}",
+                                      "hijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 240,
+                                  "valor": "}",
+                                  "tipo": "}",
+                                  "hijos": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": 241,
+                              "valor": "elif",
+                              "tipo": "4",
+                              "hijos": [
+                                {
+                                  "id": 242,
+                                  "valor": "(",
+                                  "tipo": "(",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 243,
+                                  "valor": "EXP",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 244,
+                                      "valor": "EXP",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 245,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 246,
+                                              "valor": "valor",
+                                              "tipo": "id",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 247,
+                                          "valor": ">",
+                                          "tipo": ">",
+                                          "hijos": []
+                                        },
+                                        {
+                                          "id": 248,
+                                          "valor": "EXP",
+                                          "tipo": "",
+                                          "hijos": [
+                                            {
+                                              "id": 249,
+                                              "valor": "10",
+                                              "tipo": "numero",
+                                              "hijos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 250,
+                                  "valor": ")",
+                                  "tipo": ")",
+                                  "hijos": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": 251,
+                              "valor": "{",
+                              "tipo": "{",
+                              "hijos": []
+                            },
+                            {
+                              "id": 252,
+                              "valor": "SENTENCIAS",
+                              "tipo": "16",
+                              "hijos": [
+                                {
+                                  "id": 253,
+                                  "valor": "PRINT",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 254,
+                                      "valor": "(",
+                                      "tipo": "(",
+                                      "hijos": []
+                                    },
+                                    {
+                                      "id": 255,
+                                      "valor": "EXP",
+                                      "tipo": "",
+                                      "hijos": [
+                                        {
+                                          "id": 256,
+                                          "valor": "x",
+                                          "tipo": "cadena",
+                                          "hijos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": 257,
+                                      "valor": ")",
+                                      "tipo": ")",
+                                      "hijos": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": 258,
+                              "valor": "}",
+                              "tipo": "}",
+                              "hijos": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": 259,
+                          "valor": "else",
+                          "tipo": "5",
+                          "hijos": [
+                            {
+                              "id": 260,
+                              "valor": "else",
+                              "tipo": "else",
+                              "hijos": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": 261,
+                          "valor": "{",
+                          "tipo": "{",
+                          "hijos": []
+                        },
+                        {
+                          "id": 262,
+                          "valor": "SENTENCIAS",
+                          "tipo": "16",
+                          "hijos": [
+                            {
+                              "id": 263,
+                              "valor": "PRINT",
+                              "tipo": "",
+                              "hijos": [
+                                {
+                                  "id": 264,
+                                  "valor": "(",
+                                  "tipo": "(",
+                                  "hijos": []
+                                },
+                                {
+                                  "id": 265,
+                                  "valor": "EXP",
+                                  "tipo": "",
+                                  "hijos": [
+                                    {
+                                      "id": 266,
+                                      "valor": "x",
+                                      "tipo": "cadena",
+                                      "hijos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 267,
+                                  "valor": ")",
+                                  "tipo": ")",
+                                  "hijos": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": 268,
+                          "valor": "}",
+                          "tipo": "}",
+                          "hijos": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": 269,
+                      "valor": "}",
+                      "tipo": "}",
+                      "hijos": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 270,
+              "valor": "}",
+              "tipo": "}",
+              "hijos": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

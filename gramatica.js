@@ -107,6 +107,10 @@ case 6:
                                                                 this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                                 this.$.addHijo($$[$0-1]);
                                                                 this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: palabra reservada");  
+                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: id"); 
+                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                             
 break;
 case 7:
@@ -115,18 +119,22 @@ case 7:
                                                                 this.$.addHijo(new Nodo($$[$0-2],"id"));
                                                                 this.$.addHijo(new Nodo($$[$0-1],"{"));
                                                                 this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                             
 break;
 case 8:
- this.$ = new Nodo($$[$0],"class"); 
+ this.$ = new Nodo($$[$0],"class"); tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 9:
- this.$ = new Nodo($$[$0],"interface"); 
+ this.$ = new Nodo($$[$0],"interface"); tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada");
 break;
-case 11: case 15:
+case 11:
  this.$ = new Nodo("METODOS","");
                                 this.$.addHijo($$[$0-1]);
-                                this.$.addHijo($$[$0]);
+                                this.$.addHijo($$[$0]); 
                             
 break;
 case 12: case 16:
@@ -136,13 +144,21 @@ case 12: case 16:
 break;
 case 13:
  this.$ = new Nodo("METODOS","");
-                                this.$.addHijo($$[$0-2]);
-                                this.$.addHijo($$[$0-1]);
-                            
+                                                this.$.addHijo($$[$0-2]);
+                                                this.$.addHijo($$[$0-1]); 
+                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
+                                            
 break;
 case 14:
  this.$ = new Nodo("METODOS","");
+                                                this.$.addHijo($$[$0-1]);
+                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
+                                            
+break;
+case 15:
+ this.$ = new Nodo("METODOS","");
                                 this.$.addHijo($$[$0-1]);
+                                this.$.addHijo($$[$0]);
                             
 break;
 case 17:
@@ -161,92 +177,132 @@ case 21: case 101:
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo(new Nodo($$[$0-1],","));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
-case 22: case 102:
+case 22:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"string"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"cadena"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: string"); 
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena"); 
                                         
 break;
-case 23: case 103:
+case 23:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"char"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"cadena"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: char"); 
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena"); 
                                         
 break;
-case 24: case 104:
+case 24:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"int"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"numero"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: int"); 
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
                                         
 break;
-case 25: case 105:
+case 25:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"double"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"numero"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: double"); 
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
                                         
 break;
-case 26: case 106:
+case 26:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"int"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: int"); 
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
-case 27: case 107:
+case 27:
  this.$ = new Nodo("VARIAB","");
                                             this.$.addHijo(new Nodo($$[$0-3],"double"));
                                             this.$.addHijo(new Nodo($$[$0-2],"id"));
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: double"); 
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
-case 28: case 108:
+case 28:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"string"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: string"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
-case 29: case 109:
+case 29:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"char"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: char"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
-case 30: case 110:
+case 30:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"int"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: int"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
-case 31: case 111:
+case 31:
  this.$ = new Nodo("VARIAB","");
                                 this.$.addHijo(new Nodo($$[$0-1],"double"));
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: double"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
-case 32: case 112:
+case 32:
  this.$ = new Nodo("VARIAB","");
                                         this.$.addHijo(new Nodo($$[$0-2],"id"));
                                         this.$.addHijo(new Nodo($$[$0-1],"="));
                                         this.$.addHijo(new Nodo($$[$0],"numero"));
+                                        tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
                                     
 break;
-case 33: case 113:
+case 33:
  this.$ = new Nodo("VARIAB","");
                                         this.$.addHijo(new Nodo($$[$0-2],"id"));
                                         this.$.addHijo(new Nodo($$[$0-1],"="));
                                         this.$.addHijo(new Nodo($$[$0],"cadena"));
+                                        tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id"); 
+                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena"); 
                                     
 break;
 case 34:
@@ -259,6 +315,12 @@ case 34:
                                                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                                                     this.$.addHijo($$[$0-1]);
                                                                                     this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                                    tokenArray.push("Token: " +$$[$0-8]+ " - Tipo: palabra reservada"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: id"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                 
 break;
 case 35:
@@ -268,6 +330,12 @@ case 35:
                                                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                                                     this.$.addHijo($$[$0-1]);
                                                                                     this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                                    tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: palabra reservada"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: id"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                 
 break;
 case 36:
@@ -277,12 +345,24 @@ case 36:
                                                                                     this.$.addHijo(new Nodo($$[$0-4],"("));
                                                                                     this.$.addHijo($$[$0-3]);
                                                                                     this.$.addHijo(new Nodo($$[$0-2],")"));
+                                                                                    tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: palabra reservada"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: id"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                 
 break;
 case 37:
  this.$ = new Nodo("public","4");
                                                                                     this.$.addHijo($$[$0-5]);
                                                                                     this.$.addHijo(new Nodo($$[$0-4],"id"));
+                                                                                    tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: palabra reservada"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: id"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                 
 break;
 case 38:
@@ -293,6 +373,11 @@ case 38:
                                                                                     this.$.addHijo($$[$0-2]);
                                                                                     this.$.addHijo(new Nodo($$[$0-1],")"));
                                                                                     this.$.addHijo(new Nodo($$[$0],";"));
+                                                                                    tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: palabra reservada"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: id"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                 
 break;
 case 39:
@@ -300,6 +385,11 @@ case 39:
                                                                                     this.$.addHijo($$[$0-4]);
                                                                                     this.$.addHijo(new Nodo($$[$0-3],"id"));
                                                                                     this.$.addHijo(new Nodo($$[$0],";"));
+                                                                                    tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: palabra reservada"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: id"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                 
 break;
 case 40:
@@ -308,6 +398,18 @@ case 40:
                                                                                                                 this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                                                                                 this.$.addHijo($$[$0-1]);
                                                                                                                 this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                                                                tokenArray.push("Token: " +$$[$0-12]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-11]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-10]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-9]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-8]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                                             
 break;
 case 41:
@@ -315,28 +417,40 @@ case 41:
                                                                                                                 this.$.addHijo(new Nodo($$[$0-8],"main"));
                                                                                                                 this.$.addHijo(new Nodo($$[$0-1],"{"));
                                                                                                                 this.$.addHijo(new Nodo($$[$0],"}"));
+                                                                                                                tokenArray.push("Token: " +$$[$0-11]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-10]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-9]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-8]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                                             
 break;
 case 42:
- this.$ = new Nodo($$[$0],"int"); 
+ this.$ = new Nodo($$[$0],"int");      tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 43:
- this.$ = new Nodo($$[$0],"double"); 
+ this.$ = new Nodo($$[$0],"double");   tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 44:
- this.$ = new Nodo($$[$0],"char"); 
+ this.$ = new Nodo($$[$0],"char");     tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 45:
- this.$ = new Nodo($$[$0],"string"); 
+ this.$ = new Nodo($$[$0],"string");   tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 46:
- this.$ = new Nodo($$[$0],"void"); 
+ this.$ = new Nodo($$[$0],"void");     tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 47:
- this.$ = new Nodo($$[$0],"static"); 
+ this.$ = new Nodo($$[$0],"static");   tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 48:
- this.$ = new Nodo($$[$0],"boolean"); 
+ this.$ = new Nodo($$[$0],"boolean");  tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
 break;
 case 50:
  this.$ = new Nodo("PARAMET","");
@@ -352,30 +466,41 @@ break;
 case 53:
  this.$ = new Nodo($$[$0-1],"int"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
 case 54:
  this.$ = new Nodo($$[$0-1],"double"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
 case 55:
  this.$ = new Nodo($$[$0-1],"char"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
 case 56:
  this.$ = new Nodo($$[$0-1],"string"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
 case 57:
  this.$ = new Nodo($$[$0-1],"boolean"); 
                                 this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                             
 break;
 case 58:
  this.$ = new Nodo($$[$0],","); 
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                             
 break;
 case 59:
@@ -384,6 +509,8 @@ case 59:
                                                 this.$.addHijo($$[$0-2]);
                                                 this.$.addHijo(new Nodo($$[$0-1],"{"));
                                                 this.$.addHijo(new Nodo($$[$0],"}"));
+                                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                             
 break;
 case 60:
@@ -391,6 +518,8 @@ case 60:
                                                 this.$.addHijo($$[$0-2]);
                                                 this.$.addHijo(new Nodo($$[$0-1],"{"));
                                                 this.$.addHijo(new Nodo($$[$0],"}"));
+                                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                             
 break;
 case 61:
@@ -400,6 +529,8 @@ case 61:
                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                     this.$.addHijo($$[$0-1]);
                                                     this.$.addHijo(new Nodo($$[$0],"}"));
+                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                 
 break;
 case 62:
@@ -408,6 +539,8 @@ case 62:
                                                     this.$.addHijo(new Nodo($$[$0-2],"{"));
                                                     this.$.addHijo($$[$0-1]);
                                                     this.$.addHijo(new Nodo($$[$0],"}"));
+                                                    tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                 
 break;
 case 63:
@@ -420,6 +553,13 @@ case 63:
                                                                                         this.$.addHijo(new Nodo($$[$0-3],"("));
                                                                                         this.$.addHijo($$[$0-2]);
                                                                                         this.$.addHijo(new Nodo($$[$0-1],")"));
+                                                                                        tokenArray.push("Token: " +$$[$0-8]+ " - Tipo: palabra reservada"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                     
 break;
 case 64:
@@ -431,6 +571,13 @@ case 64:
                                                                                         this.$.addHijo(new Nodo($$[$0-3],"("));
                                                                                         this.$.addHijo($$[$0-2]);
                                                                                         this.$.addHijo(new Nodo($$[$0-1],")"));
+                                                                                        tokenArray.push("Token: " +$$[$0-8]+ " - Tipo: palabra reservada"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                                     
 break;
 case 65:
@@ -442,6 +589,13 @@ case 65:
                                                                                 this.$.addHijo(new Nodo($$[$0-3],"("));
                                                                                 this.$.addHijo($$[$0-2]);
                                                                                 this.$.addHijo(new Nodo($$[$0-1],")"));
+                                                                                tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                                             
 break;
 case 66:
@@ -452,28 +606,39 @@ case 66:
                                                                                 this.$.addHijo(new Nodo($$[$0-3],"("));
                                                                                 this.$.addHijo($$[$0-2]);
                                                                                 this.$.addHijo(new Nodo($$[$0-1],")"));
+                                                                                tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
                                                                             
 break;
 case 67:
  this.$ = new Nodo("SENTENCIAS","9");
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo($$[$0-1]);
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                         
 break;
 case 68:
  this.$ = new Nodo("SENTENCIAS","10");
                                             this.$.addHijo($$[$0-1]);
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                         
 break;
 case 69:
  this.$ = new Nodo("SENTENCIAS","11");
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo($$[$0-1]);
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                         
 break;
 case 70:
  this.$ = new Nodo("SENTENCIAS","12");
                                             this.$.addHijo($$[$0-1]);
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                         
 break;
 case 71:
@@ -502,11 +667,13 @@ case 75:
  this.$ = new Nodo("SENTENCIAS","17");
                                         this.$.addHijo($$[$0-2]);
                                         this.$.addHijo($$[$0-1]);
+                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                     
 break;
 case 76:
  this.$ = new Nodo("SENTENCIAS","18");
                                         this.$.addHijo($$[$0-1]);
+                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                     
 break;
 case 77:
@@ -521,6 +688,12 @@ case 79:
                                                                                 this.$.addHijo(new Nodo($$[$0-2],";"));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
+                                                                                tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
+                                                                                
                                                                             
 break;
 case 80:
@@ -528,6 +701,9 @@ case 80:
                                                                                 this.$.addHijo(new Nodo($$[$0-2],"("));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
+                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
                                                                             
 break;
 case 81:
@@ -535,6 +711,9 @@ case 81:
                                                                                 this.$.addHijo(new Nodo($$[$0-2],"("));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
+                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
                                                                             
 break;
 case 82:
@@ -542,11 +721,16 @@ case 82:
                                                                                 this.$.addHijo(new Nodo($$[$0-2],"("));
                                                                                 this.$.addHijo($$[$0-1]);
                                                                                 this.$.addHijo(new Nodo($$[$0],")"));
+                                                                                tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada"); 
+                                                                                tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo");
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
                                                                             
 break;
 case 83:
  this.$ = new Nodo("else","5");
                                                                                 this.$.addHijo(new Nodo($$[$0],"else"));
+                                                                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
                                                                             
 break;
 case 84: case 85:
@@ -554,22 +738,33 @@ case 84: case 85:
                                                                         this.$.addHijo(new Nodo($$[$0-3],"("));
                                                                         this.$.addHijo($$[$0-2]);
                                                                         this.$.addHijo(new Nodo($$[$0-1],")"));
+                                                                        tokenArray.push("Token: " +$$[$0-8]+ " - Tipo: palabra reservada"); 
+                                                                        tokenArray.push("Token: " +$$[$0-7]+ " - Tipo: simbolo"); 
+                                                                        tokenArray.push("Token: " +$$[$0-6]+ " - Tipo: palabra reservada");
+                                                                        tokenArray.push("Token: " +$$[$0-5]+ " - Tipo: simbolo");
+                                                                        tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada");
+                                                                        tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: simbolo");
+                                                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");
+                                                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");
                                                                     
 break;
 case 86:
  this.$ = new Nodo("RET","1");
                         this.$.addHijo(new Nodo($$[$0],"break"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
                     
 break;
 case 87:
  this.$ = new Nodo("RET","2");
                         this.$.addHijo(new Nodo($$[$0],"continue"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: palabra reservada"); 
                     
 break;
 case 88:
  this.$ = new Nodo("RET","3");
                         this.$.addHijo(new Nodo($$[$0-1],"return"));
                         this.$.addHijo($$[$0]);
+                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
                     
 break;
 case 89:
@@ -578,6 +773,11 @@ case 89:
                                                         this.$.addHijo(new Nodo($$[$0-3],"id"));
                                                         this.$.addHijo(new Nodo($$[$0-2],"="));
                                                         this.$.addHijo(new Nodo($$[$0-1],"true"));
+                                                        tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                        tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: id"); 
+                                                        tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                     
 break;
 case 90:
@@ -586,42 +786,59 @@ case 90:
                                                         this.$.addHijo(new Nodo($$[$0-3],"id"));
                                                         this.$.addHijo(new Nodo($$[$0-2],"="));
                                                         this.$.addHijo(new Nodo($$[$0-1],"false"));
+                                                        tokenArray.push("Token: " +$$[$0-4]+ " - Tipo: palabra reservada"); 
+                                                        tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: id"); 
+                                                        tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                                                     
 break;
 case 91:
  this.$ = new Nodo("DEC",""); 
                     this.$.addHijo(new Nodo($$[$0-1],"id"));
                     this.$.addHijo(new Nodo("++","adicion"));
+                    tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: id"); 
+                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                 
 break;
 case 92:
  this.$ = new Nodo("DEC",""); 
                     this.$.addHijo(new Nodo($$[$0-1],"id"));
                     this.$.addHijo(new Nodo("--","sustraccion"));
+                    tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: id"); 
+                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
                 
 break;
 case 94:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"int"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
 case 95:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"double"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
 case 96:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"char"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
 case 97:
  this.$ = new Nodo("COND","");
                                             this.$.addHijo(new Nodo($$[$0-1],"string"));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
 break;
 case 98:
@@ -629,6 +846,8 @@ case 98:
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"numero"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
                                         
 break;
 case 99:
@@ -636,13 +855,140 @@ case 99:
                                             this.$.addHijo($$[$0-2]);
                                             this.$.addHijo(new Nodo($$[$0-1],"="));
                                             this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
                                         
+break;
+case 102:
+ this.$ = new Nodo("VARIAB","");
+                                            this.$.addHijo(new Nodo($$[$0-3],"string"));
+                                            this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                            this.$.addHijo(new Nodo($$[$0-1],"="));
+                                            this.$.addHijo(new Nodo($$[$0],"cadena"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada");
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");  
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena"); 
+                                        
+break;
+case 103:
+ this.$ = new Nodo("VARIAB","");
+                                            this.$.addHijo(new Nodo($$[$0-3],"char"));
+                                            this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                            this.$.addHijo(new Nodo($$[$0-1],"="));
+                                            this.$.addHijo(new Nodo($$[$0],"cadena"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada");
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");  
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena"); 
+                                        
+break;
+case 104:
+ this.$ = new Nodo("VARIAB","");
+                                            this.$.addHijo(new Nodo($$[$0-3],"int"));
+                                            this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                            this.$.addHijo(new Nodo($$[$0-1],"="));
+                                            this.$.addHijo(new Nodo($$[$0],"numero"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada");
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");  
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
+                                        
+break;
+case 105:
+ this.$ = new Nodo("VARIAB","");
+                                            this.$.addHijo(new Nodo($$[$0-3],"double"));
+                                            this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                            this.$.addHijo(new Nodo($$[$0-1],"="));
+                                            this.$.addHijo(new Nodo($$[$0],"numero"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada");
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");  
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
+                                        
+break;
+case 106:
+ this.$ = new Nodo("VARIAB","");
+                                            this.$.addHijo(new Nodo($$[$0-3],"int"));
+                                            this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                            this.$.addHijo(new Nodo($$[$0-1],"="));
+                                            this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada");
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");  
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
+                                        
+break;
+case 107:
+ this.$ = new Nodo("VARIAB","");
+                                            this.$.addHijo(new Nodo($$[$0-3],"double"));
+                                            this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                            this.$.addHijo(new Nodo($$[$0-1],"="));
+                                            this.$.addHijo(new Nodo($$[$0],"id"));
+                                            tokenArray.push("Token: " +$$[$0-3]+ " - Tipo: palabra reservada");
+                                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");  
+                                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo"); 
+                                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
+                                        
+break;
+case 108:
+ this.$ = new Nodo("VARIAB","");
+                                this.$.addHijo(new Nodo($$[$0-1],"string"));
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada");
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id");  
+                            
+break;
+case 109:
+ this.$ = new Nodo("VARIAB","");
+                                this.$.addHijo(new Nodo($$[$0-1],"char"));
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada");
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id");  
+                            
+break;
+case 110:
+ this.$ = new Nodo("VARIAB","");
+                                this.$.addHijo(new Nodo($$[$0-1],"int"));
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada");
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id");  
+                            
+break;
+case 111:
+ this.$ = new Nodo("VARIAB","");
+                                this.$.addHijo(new Nodo($$[$0-1],"double"));
+                                this.$.addHijo(new Nodo($$[$0],"id"));
+                                tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: palabra reservada");
+                                tokenArray.push("Token: " +$$[$0]+ " - Tipo: id");  
+                            
+break;
+case 112:
+ this.$ = new Nodo("VARIAB","");
+                                        this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                        this.$.addHijo(new Nodo($$[$0-1],"="));
+                                        this.$.addHijo(new Nodo($$[$0],"numero"));
+                                        tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");
+                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
+                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero");  
+                                    
+break;
+case 113:
+ this.$ = new Nodo("VARIAB","");
+                                        this.$.addHijo(new Nodo($$[$0-2],"id"));
+                                        this.$.addHijo(new Nodo($$[$0-1],"="));
+                                        this.$.addHijo(new Nodo($$[$0],"cadena"));
+                                        tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: id");
+                                        tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
+                                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena");  
+                                    
 break;
 case 114:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],","));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 115:
@@ -655,6 +1001,7 @@ case 116:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"&&"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 117:
@@ -662,6 +1009,7 @@ case 117:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"||"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 118:
@@ -669,6 +1017,7 @@ case 118:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"!"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 119:
@@ -676,6 +1025,7 @@ case 119:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"^"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 120:
@@ -683,6 +1033,7 @@ case 120:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"<"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 121:
@@ -690,6 +1041,7 @@ case 121:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"<="));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 122:
@@ -697,6 +1049,7 @@ case 122:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],">="));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 123:
@@ -704,6 +1057,7 @@ case 123:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],">"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 124:
@@ -711,6 +1065,7 @@ case 124:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"=="));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 125:
@@ -718,6 +1073,7 @@ case 125:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"!="));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 126:
@@ -725,6 +1081,7 @@ case 126:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"+"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 127:
@@ -732,6 +1089,7 @@ case 127:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"-"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 128:
@@ -739,6 +1097,7 @@ case 128:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"*"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 129:
@@ -746,41 +1105,70 @@ case 129:
                             this.$.addHijo($$[$0-2]);
                             this.$.addHijo(new Nodo($$[$0-1],"/"));
                             this.$.addHijo($$[$0]);
+                            tokenArray.push("Token: " +$$[$0-1]+ " - Tipo: simbolo");  
                         
 break;
 case 130:
  this.$ = new Nodo("EXP",""); 
                     this.$.addHijo($$[$0-1]);
                     this.$.addHijo(new Nodo($$[$0],"++"));
+                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");  
                 
 break;
 case 131:
  this.$ = new Nodo("EXP",""); 
                     this.$.addHijo($$[$0-1]);
                     this.$.addHijo(new Nodo($$[$0],"--"));
+                    tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");  
                 
 break;
-case 132: case 140:
+case 132:
  this.$ = new Nodo("EXP","");
                             this.$.addHijo(new Nodo($$[$0-2],"("));
                             this.$.addHijo($$[$0-1]); 
                             this.$.addHijo(new Nodo($$[$0],")"));
+                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo");  
+                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo");  
                         
 break;
-case 133: case 137:
+case 133:
  this.$ = new Nodo("EXP","");
                         this.$.addHijo(new Nodo($$[$0],"numero"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero");  
                     
 break;
-case 134: case 138:
+case 134:
  this.$ = new Nodo("EXP","");
                         this.$.addHijo(new Nodo($$[$0],"id"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: id");  
                     
 break;
 case 135: case 139:
  this.$ = new Nodo("EXP","");
                         this.$.addHijo(new Nodo($$[$0],"cadena"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: cadena");  
                     
+break;
+case 137:
+ this.$ = new Nodo("EXP","");
+                        this.$.addHijo(new Nodo($$[$0],"numero"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: numero"); 
+                    
+break;
+case 138:
+ this.$ = new Nodo("EXP","");
+                        this.$.addHijo(new Nodo($$[$0],"id"));
+                        tokenArray.push("Token: " +$$[$0]+ " - Tipo: id"); 
+                    
+break;
+case 140:
+ this.$ = new Nodo("EXP","");
+                            this.$.addHijo(new Nodo($$[$0-2],"("));
+                            this.$.addHijo($$[$0-1]); 
+                            this.$.addHijo(new Nodo($$[$0],")"));
+                            tokenArray.push("Token: " +$$[$0-2]+ " - Tipo: simbolo"); 
+                            tokenArray.push("Token: " +$$[$0]+ " - Tipo: simbolo"); 
+                        
 break;
 case 141:
 
@@ -1054,7 +1442,8 @@ _handle_error:
     return true;
 }};
 
-    token = new Array();
+    let tokenArray = new Array();
+    module.exports.tokenArray = tokenArray;
     const Nodo = require('./arbolNodo');
     
     let panic = false

@@ -1,5 +1,6 @@
 var idNodo = 1;
 var CodigoTraduccion="";
+var CodigoGrafo="";
 class arbolRecorrido{
     constructor(){
     }
@@ -11,24 +12,19 @@ class arbolRecorrido{
         }
 
         //MIS NODOS
-        console.log(nodo.id +'[label = "'+ nodo.valor +'" shape = "circle"];');
-        //dato+=nodo.id +'[label = "'+ nodo.valor +'" shape = "circle"];\n';
-
-        
-        //console.log(nodo.valor+"  valor de arriba");
-
-        
+        //console.log(nodo.id +'[label = "'+ nodo.valor +'" shape = "circle"];');
+        CodigoGrafo += +nodo.id +'[label = "'+ nodo.valor +'" shape = "circle"]; '
 
         nodo.hijos.forEach(element => {
             //TRANSICIONES
-            console.log(nodo.id +' -> '+ idNodo +';');
-            //dato+=nodo.id +' -> '+ idNodo +';\n';
-
+            //console.log(nodo.id +' -> '+ idNodo +';');
+            CodigoGrafo += nodo.id +' -> '+ idNodo +'; '
             
-            
-            //console.log(nodo.valor+"  valor del hijo")
             this.recorrerArbol(element);
         });
+
+        //console.log(CodigoGrafo);
+        return CodigoGrafo;
         
     }
 
@@ -41,7 +37,8 @@ class arbolRecorrido{
         //console.log(nodo.valor);
         if(nodo.valor=="RAIZ"){
             this.traduccionTree(nodo.hijos[0]); //RAIZ.hijos]
-            console.log(CodigoTraduccion);
+            //console.log(CodigoTraduccion);
+            return CodigoTraduccion;
         }
 
         /********************************* CLASES *********************************************/
@@ -50,7 +47,7 @@ class arbolRecorrido{
             nodo.hijos.forEach(element => {
                pruebaTamaño++;
             });
-            console.log("Hijos Clase: "+pruebaTamaño);
+            //console.log("Hijos Clase: "+pruebaTamaño);
 
             if(pruebaTamaño==1){
                 if(nodo.hijos[0].hijos[0].valor=="class"){
@@ -304,7 +301,7 @@ class arbolRecorrido{
                pruebaTamaño++;
             });
             
-            console.log("nodos de sentencias: "+pruebaTamaño);
+            //console.log("nodos de sentencias: "+pruebaTamaño);
             //console.log(nodo.hijos[0].valor);
             //primero hijo izquierdo
             this.traduccionTree(nodo.hijos[0]); 

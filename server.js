@@ -19,22 +19,31 @@ server.listen(port, hostname, () => {
 
 
 
-/*
+
 var fs = require('fs');
 var parser = require('./gramatica');
 var arbol = require('./arbolRecorrido');
+//crear variables para el texto del arbol y mandarlo en consola luego a la pagina
 
-
+/*
 fs.readFile('./entrada.txt', (err,data) => {
    // if (err) trhow err;
     //parser.parse(data.toString());
 
     var raiz = new arbol();
-    console.log(raiz.recorrerArbol( parser.parse(data.toString())));
-    console.log(raiz.traduccionTree( parser.parse(data.toString())));
-});
-*/
+    var SendCodigoGrafo="";
+    var SendCodigoTraduccion="";
 
+    //SendCodigoGrafo += raiz.recorrerArbol(arbolNodo);
+    SendCodigoGrafo += raiz.recorrerArbol( parser.parse(data.toString()));
+    console.log(SendCodigoGrafo);
+
+    //raiz.traduccionTree( parser.parse(data.toString()));
+    //SendCodigoTraduccion += raiz.traduccionTree( parser.parse(data.toString()));
+    //console.log(SendCodigoTraduccion);
+});
+
+*/
 
 
 
@@ -64,20 +73,25 @@ app.get('/', (req, res) => {
     res.send('Hello');
 });
 
+var ast;
+var parser = require('./gramatica');
+var arbol = require('./arbolRecorrido');
+var raiz = new arbol();
+var SendCodigoGrafo="";
+var SendCodigoTraduccion="";
+
+
 app.post('/Analyze/', (req, res) => {
     try {
         const { input } = req.body;
         var fs = require('fs');
         //  se instancia al analizador o gramatica
         //var parser = require('./gramatica');
-        var ast;
-        var parser = require('./gramatica');
-        var arbol = require('./arbolRecorrido');
-        var raiz = new arbol();
-        //console.log(raiz.recorrerArbol( parser.parse(data.toString())));
-        //console.log(raiz.traduccionTree( parser.parse(data.toString())));
+    
         try {
             ast = parser.parse(input.toString());
+            SendCodigoGrafo += raiz.recorrerArbol(ast);
+            SendCodigoTraduccion += raiz.traduccionTree(ast);
             fs.writeFileSync('./ast.json', JSON.stringify(ast, null, 2));
         } catch (e) {
             console.log("No se pudo recuperar del ultimo error");
@@ -96,3 +110,52 @@ app.post('/Analyze/', (req, res) => {
 });
 
 
+
+
+
+
+app.post('/TOK/', (req, res) => {
+    try {
+        
+        let tokenArray = require('./gramatica').tokenArray;
+        
+        if (ast != undefined) {
+            console.log(tokenArray);
+        }
+        res.send(tokenArray);
+
+    } catch (e) {
+        console.error(e);
+    }
+});
+
+
+
+
+app.post('/Arbolin/', (req, res) => {
+    try {
+        
+        console.log("ENTRO");
+    
+        
+        if (ast != undefined) {
+            console.log(SendCodigoGrafo);
+        }
+        res.send(SendCodigoGrafo);
+
+    } catch (e) {
+        console.error(e);
+    }
+});
+
+
+
+app.post('/CodigoTraducido/', (req, res) => {
+        console.log("ENTRO");
+    
+        
+            console.log(SendCodigoTraduccion);
+        
+        res.send(SendCodigoTraduccion);
+
+});

@@ -1,14 +1,16 @@
 let errorsArray = [];
-
+let tokensArray = [];
+let ArbolGet="";
+let TraduccionGet="";
 /**
  * Tries to connect to another url (in this case should be our back-end server)
  * and executes a POST operation
  */
 
 /************* Manda el texto del area principal al backEnd NODE *************/
-function Conn() {
+function Conexion() {
 
-    alert("Actualizado ");
+    alert("Actualizado 55");
 
     var url = 'http://localhost:8080/Analyze/';
 
@@ -27,6 +29,196 @@ function Conn() {
         }
     });
 }
+
+
+
+/************* Muestra los tokens de JS *************/
+function ShowTokensJS() {
+    alert("Actualizado 55");
+
+    var url = 'http://localhost:8080/TOK/';
+
+    var dataAsJson = {
+        input: document.getElementById("javaText").value
+    };
+
+    $.post(url, dataAsJson, function (data, status) {
+        tokensArray = data;
+        
+    });
+
+    
+    let SendTokens = "";
+    let contador = 1;
+    tokensArray.forEach(token => {
+        SendTokens += contador + ". "+token + "\n";
+        contador+=1;
+    });
+    document.getElementById("txtTokens").value = SendTokens;
+
+
+}
+
+
+
+/************* Muestra los errores de JS *************/
+function ShowErrorsJS(){
+    alert("Actualizado 55");
+    let SendErrors = "";
+    if(errorsArray!=null){
+        errorsArray.forEach(error => {
+            SendErrors += error + "\n";
+        });
+        document.getElementById("txtjs").value = SendErrors;
+
+    }else{
+        document.getElementById("txtjs").value = "";
+
+    }
+}
+
+
+
+/************* Muestra codigo del arbol *************/
+function ShowTree(){
+    alert("Actualizado 55");
+    var url = 'http://localhost:8080/Arbolin/';
+
+    var dataAsJson = {
+        input: document.getElementById("javaText").value
+    };
+
+    $.post(url, dataAsJson, function (data, status) {
+        ArbolGet = data;
+        
+    });
+    alert("despues del post "+ArbolGet);
+
+    
+    document.getElementById("txtShow").value = ArbolGet;
+    alert(ArbolGet);
+}
+
+/************* Descarga el arbol *************/
+function probandoArbol(){
+    alert("Actualizado 55");
+    /*
+    d3.select("#graph").graphviz()
+                        .renderDot("digraph  {"+ArbolGet+" }");
+
+    */
+    let htmlText = '<!DOCTYPE html>'
+        +'<html>\n' 
+        +'<meta charset="utf-8">\n' 
+        +'<body>\n' 
+        +'<script src="https://d3js.org/d3.v5.min.js"></script>\n' 
+        +'<script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>\n' 
+        +'<script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>\n' 
+        +'<div class="col">\n'
+        +'<div class="row">\n'
+        +'<div id="graph" style="text-align: center;"></div>\n' 
+        +'<script>\n'
+        + 'd3.select("#graph").graphviz()'
+        + '.renderDot(\'digraph  { '
+        + ArbolGet
+        + ' }\');'
+        + '</script>' 
+        +'</div>\n'
+        +'</div>\n'
+        + '</body>\n' 
+        +'</html>\n' 
+    saveFile(htmlText, "PruebaArbol.html");
+    
+}
+
+
+
+/************* Muestra traduccion del codigo *************/
+function ShowCodeJS(){
+    alert("Actualizado 55");
+    var url = 'http://localhost:8080/CodigoTraducido/';
+
+    var dataAsJson = {
+        input: document.getElementById("javaText").value
+    };
+
+    $.post(url, dataAsJson, function (data, status) {
+        TraduccionGet = data;
+        
+    });
+
+    
+    document.getElementById("txtShow").value = TraduccionGet;
+    alert(TraduccionGet);
+}
+
+/************* Descarga el codigo traducido *************/
+function probandoTraduccion(){
+    alert("Actualizado 55");
+    
+    saveFile(TraduccionGet, "TraduccionJS.js");
+    
+}
+
+
+
+
+
+
+
+function htmlReport() {
+    let htmlText = "<html>\n" +
+        "<head>\n" +
+        "<meta charset='utf-16'>\n" +
+        "<title>Reporte - Errores</title>\n" +
+        "<body>\n" +
+        "<h1>\n" +
+        "<center>Listado de Errores y su descripción</center>\n" +
+        "</h1>\n" +
+        "<body>\n" +
+        "<center>\n"
+        + "<p>\n"
+        + "<br>\n"
+        + "</p>\n"
+        + "<table border= 4>\n"
+        + "<tr>\n" +
+        "<td><center><b>#</b></center></td>\n"
+        + "<td><center><b>Error</b></center></td>\n"
+        + "<td><center><b>Fila</b></center></td>\n"
+        + "<td><center><b>Columna</b></center></td>\n"
+        + "<td><center><b>Descripción</b></center></td>\n"
+        + "</tr>\n";
+    errorsArray.forEach(error => {
+        htmlText += error + "\n";
+    });
+    htmlText += "</table>\n" +
+        "</center>\n" +
+        "</body>\n" +
+        "</html>";
+    saveFile(htmlText, "Errores.html");
+}
+
+
+
+
+function processJson(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        // Cuando éste evento se dispara, los datos están ya disponibles.
+        // Se trata de copiarlos a una área <div> en la página.
+        let text = document.getElementById("ast");
+        text.textContent = e.target.result;
+        text.value = text.textContent;
+        //document.getElementById("javaText").value = output.textContent;
+    };
+    reader.readAsText(file);
+}
+
+
+
+
+
 
 /************* Abrir archivos *************/
 function processFiles(files) {
@@ -63,61 +255,6 @@ function processFiles(files) {
 }
 
 
-function processJson(files) {
-    var file = files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        // Cuando éste evento se dispara, los datos están ya disponibles.
-        // Se trata de copiarlos a una área <div> en la página.
-        let text = document.getElementById("ast");
-        text.textContent = e.target.result;
-        text.value = text.textContent;
-        //document.getElementById("javaText").value = output.textContent;
-    };
-    reader.readAsText(file);
-}
-
-function ShowErrors(){
-    alert("actualizado ");
-    let SendErrors = "";
-    
-    errorsArray.forEach(error => {
-        SendErrors += error + "\n";
-    });
-    document.getElementById("txtjs").value = SendErrors;
-}
-
-function htmlReport() {
-    let htmlText = "<html>\n" +
-        "<head>\n" +
-        "<meta charset='utf-16'>\n" +
-        "<title>Reporte - Errores</title>\n" +
-        "<body>\n" +
-        "<h1>\n" +
-        "<center>Listado de Errores y su descripción</center>\n" +
-        "</h1>\n" +
-        "<body>\n" +
-        "<center>\n"
-        + "<p>\n"
-        + "<br>\n"
-        + "</p>\n"
-        + "<table border= 4>\n"
-        + "<tr>\n" +
-        "<td><center><b>#</b></center></td>\n"
-        + "<td><center><b>Error</b></center></td>\n"
-        + "<td><center><b>Fila</b></center></td>\n"
-        + "<td><center><b>Columna</b></center></td>\n"
-        + "<td><center><b>Descripción</b></center></td>\n"
-        + "</tr>\n";
-    errorsArray.forEach(error => {
-        htmlText += error + "\n";
-    });
-    htmlText += "</table>\n" +
-        "</center>\n" +
-        "</body>\n" +
-        "</html>";
-    saveFile(htmlText, "Errores.html");
-}
 
 /************* Guardar archivos del area de texto principal *************/
 function saveJava() {
