@@ -1,0 +1,54 @@
+
+body
+{
+    background-color: #FFC0CB;
+}
+.menu
+{
+    background-color: #DB7093;
+}
+.texto
+{
+    color: white;
+    font-size: large;
+    margin: 1%;
+}
+.btn
+{
+    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.btn-outline-light:hover
+{
+    color: #FFC0CB;
+}
+.title
+{
+    color: white;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.archi {
+    display: none;
+}
+#fileInput {
+    display: none;
+}
+
+.JSArea{
+  background-color: #000000;
+  color: #7FFF00;
+}
+
+.PythonArea{
+  background-color: #000000;
+  color: #7FFF00;
+}
+
+
