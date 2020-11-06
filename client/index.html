@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Compiladores 1</title>
+	<base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    
+        
+    <script src="../js/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="../js/codemirror/lib/codemirror.css">
+    <script src="../js/codemirror/mode/clike/clike.js"></script> 
+                        <!--agregado.-->
+    <link rel="stylesheet" href="../js/codemirror/theme/material-darker.css">
+    
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+
+
+
+
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+</head>
+
+<body>
+	<header class="menu">
+        <ul class="nav nav-pills">
+            <div class="texto">Adriana Gómez - 201504236</div>
+            <li class="nav-item dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Menu</button>
+                <div class="dropdown-menu">
+                    <label class="dropdown-toggle custom-file-upload">
+                        <!--Input para abrir archivo.-->
+                        Cargar archivo
+                        <input id="fileInput" type="file" size="20" onchange='processFiles(this.files)' accept=".rmt">
+                    </label>
+                    <div class="dropdown-divider"></div>
+                    <a onclick="saveJava()" class="dropdown-item" href="#">Guardar archivo</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Nueva Pestaña</a>
+                </div>
+            </li>
+            <div class="texto"></div>
+            <li class="nav-item dropdown">
+				<button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">JavaScript</button>
+                <div class="dropdown-menu">
+                    <a onclick="ShowTokensJS()" class="dropdown-item" href="#">Mostrar tokens</a>
+                    <a onclick="ShowErrorsJS()" class="dropdown-item" href="#">Mostrar errores</a>
+                    <a onclick="ShowTree()" class="dropdown-item" href="#">Mostrar arbol</a>
+                    <a onclick="probandoArbol()" class="dropdown-item" href="#">Descargar arbol</a>
+                    <a onclick="ShowCodeJS()" class="dropdown-item" href="#">Codigo traducido</a>
+                </div>
+            </li>
+            <div class="texto"></div>
+            <li class="nav-item dropdown">
+				<button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Python</button>
+                <div class="dropdown-menu">
+                    <a onclick="ShowTokensPY()" class="dropdown-item" href="#">Mostrar tokens</a>
+                    <a onclick="ShowErrorsPY()" class="dropdown-item" href="#">Mostrar errores</a>
+                    <a onclick="ShowTreePY()" class="dropdown-item" href="#">Mostrar arbol</a>
+                    <a onclick="ASTPY()" class="dropdown-item" href="#">Descargar arbol</a>
+                </div>
+            </li>
+            <div class="texto"></div>
+            <li class="nav-item dropdown">
+                <!--button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Reportes</button>
+                <div class="dropdown-menu">
+                    <a onclick="htmlReport()" class="dropdown-item" href="#">Errores</a>
+				</div-->
+				<button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Descargar codigo</button>
+                <div class="dropdown-menu">
+                    <a onclick="" class="dropdown-item" href="#">Ambos</a>
+                    <a onclick="probandoTraduccion()" class="dropdown-item" href="#">JavaScript</a>
+                    <a onclick="" class="dropdown-item" href="#">Python</a>
+                </div>
+            </li>
+            <div class="texto"></div>
+            <li class="nav-item">
+                <button class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Analizar</button>
+                <div class="dropdown-menu">
+                    <a onclick="Conexion()" class="dropdown-item" href="#">JavaScript</a>
+                    <a onclick="ConexionPY()" class="dropdown-item" href="#">Python</a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="title">Entrada</h3>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="t1" data-toggle="tab" href="#tab1" role="tab"
+                                    aria-controls="tab1" aria-selected="true">Pestaña</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+							<!-- Aqui va el text de entrada donde se carga el archivo -->
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="t1">
+                                <textarea id="javaText" class="form-control" rows="18"></textarea>
+                                
+                            </div>
+                        </div>
+                        
+                    
+						<br><br>
+                        <h3 class="title">Textos a mostrar</h3>
+                        <textarea id="txtShow" readonly class="form-control" rows="18"></textarea>
+                    </div>
+                </div>
+				<div class="row">
+                    <div class="col">
+                    </div>
+                </div>
+			</div>
+			
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <br><br>
+						<!-- Aqui van los text de salida -->
+                        <h3 class="title">Salida JS</h3>
+                        <!--input type="file" class="load-json" onchange='processJson(this.files)' accept=".json">
+                        <button type="button" class="load-json">Cargar JSON</button>
+                        <button type="button" class="collapse">Comprimir</button-->
+						<textarea id="txtjs" readonly class="form-control" rows="18"></textarea>
+						<br><br>
+                        <h3 class="title">Salida Python</h3>
+                        <textarea id="txtpython" readonly class="form-control" rows="18"></textarea>
+						<br><br>
+                        <h3 class="title">Listado de tokens</h3>
+                        <textarea id="txtTokens" readonly class="form-control" rows="18"></textarea>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fileOutput" class="archi"></div>
+</body>
+
+</html>
