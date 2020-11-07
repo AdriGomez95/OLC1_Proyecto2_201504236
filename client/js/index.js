@@ -218,3 +218,35 @@ function saveFile(text, name) {
     // automatically click the <a> element to go to the URL to save the textFileAsBlob...
     downloadLink.click();
 }
+
+
+
+
+
+
+
+
+/************* Manda el texto del area principal al backEnd NODE *************/
+function ConexionPY() {
+
+    alert("Actualizado 1");
+    var erroresPY = [];
+    var codigoErrores;
+
+    var url = 'http://localhost:8079/AnalyzePY/';
+
+    var dataAsJson = {
+        input: document.getElementById("javaText").value
+    };
+
+    $.post(url, dataAsJson, function (data, status) {
+        alert("Aqui: \n"+data);
+        erroresPY=data.toString();
+        alert(erroresPY);
+        document.getElementById("txtpython").value = erroresPY;
+    });
+
+
+
+
+}
